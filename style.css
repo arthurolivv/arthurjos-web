@@ -1,0 +1,571 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+:root {
+--hue: 358;
+--first-color: hsl(var(--hue), 80%, 49%);
+--first-color-alt: hsl(var(--hue), 76%, 45%);
+--white-color: hsl(0, 0%, 98%);
+--black-color: hsl(0, 0%, 1%);
+--text-color: hsl(var(--hue), 2%, 66%);
+--body-color: hsl(var(--hue), 100%, 1%);
+--container-color: hsl(var(--hue), 2%, 10%);
+--conic-gradient: conic-gradient(from 150deg at 50% 45%,
+                hsl(var(--hue), 80%, 20%) 0deg,
+                hsl(var(--hue), 80%, 48%) 140deg,
+                hsl(var(--hue), 80%, 20%) 360deg);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body,
+input,
+button,
+textarea
+ {
+    font-family: lexend;
+    border: none;
+    outline: none;
+}
+body{
+    background: black; /*var(--container-color);*/
+    color: var(--white-color);
+}
+input,
+button,
+textarea {
+  border: none;
+  outline: none;
+}
+h1, h2, h3, h4 {
+    color: var(--white-color);
+    font-weight: var(--font-semi-bold);
+  }
+html{
+    scroll-behavior: smooth;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+/*========================================Geral==============================*/
+  .hubH{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    justify-content: center;
+  }
+  .hubV{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+  }
+  .main {
+    overflow: hidden;
+    /*background: linear-gradient(45deg, #000000, #240029);*/
+    background: url(assets/img/freepik__enhance__14190.png)center/cover no-repeat;
+    
+  }
+  section{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+  }
+ /*==========================================NAV============================*/
+ .navTopo {
+    width: 90%; /* Faz a barra ocupar 90% da tela */
+    max-width: 425px; /* Mantém um limite máximo */
+    height: 4%; /* Permite que a altura se ajuste conforme o conteúdo */
+    border-radius: 100px;
+    margin: 10px auto; /* Centraliza horizontalmente */
+    background-color: #101010;
+    padding: 10px 15px; /* Ajusta melhor o espaçamento interno */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border: 0.5px solid gray;
+}
+.menu {
+    display: flex;
+    font-size: 14px;
+    flex-direction: row;
+    padding: 10px 5px;
+    gap: 20px; /* Reduzi o gap para telas menores */
+    text-align: center;
+    color: white;
+    justify-content: center;
+    flex-wrap: wrap; /* Permite quebra para telas pequenas */
+}
+.menu :hover {
+    color: gray;
+    cursor: pointer;
+}
+/* 📌 Responsividade para telas menores */
+@media (max-width: 480px) {
+    .navTopo {
+        width: 90%; /* Ocupa toda a largura */
+        max-width: none; /* Remove o limite fixo */
+        padding: 8px; /* Reduz o padding para se ajustar melhor */
+    }
+    
+    .menu {
+        flex-wrap: wrap; /* Quebra os itens do menu para novas linhas se necessário */
+        gap: 10px; /* Diminui o espaço entre os itens */
+        font-size: 12px; /* Ajusta o tamanho do texto para telas pequenas */
+    }
+}
+/*=====================================Home=================================*/
+.headerHome{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1px 5px;
+    overflow: hidden; /* Evita que o ::before ultrapasse os limites */
+}
+.headerHome::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('assets/img/19852122_6195005.jpg') center/cover no-repeat;
+    filter: blur(10px); /* Aplica o blur na imagem de fundo */
+    z-index: -1; /* Mantém a camada de fundo atrás do conteúdo */
+}
+.home_name{
+    text-align: center;
+}
+.home_card{
+    text-align: center;
+    background-color: var(--container-color);
+    padding: 1rem 5rem;
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    border: 1px solid gray;
+    margin: auto;
+    gap: 15px;
+    width: 100%;
+}
+.home_circle {
+    background: rgba(211, 68, 255, 0.062); /* Cor semi-transparente */
+    height: 300px;
+    width: 300px;
+    border-radius: 100%;
+    display: grid;
+    margin-block: 1rem;
+    margin: auto;
+    overflow: hidden;
+    backdrop-filter: blur(0.1px); /* Desfoque do fundo */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    border: 0.5px solid rgba(255, 255, 255, 0.05);
+}
+.home_img{
+    width: auto;
+    align-items: end;
+    align-self: flex-end;
+}
+            /*=====================================Home: Bkg=================================*/
+.bkg {
+    position: relative;
+    border-radius: 40px;
+    background-color: #191919;
+    border: 0.5px solid rgba(255, 255, 255, 0.05);
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Alinha verticalmente a imagem e o texto */
+    padding: 5px 20px;
+    gap: 10px;
+    font-size: 14px;
+    color: #ccc;
+}
+#bkg_1{
+    justify-content: center;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px 10px;
+    padding-left: -1px;
+}
+.bkg_txt{
+    flex-grow: 1;
+    text-align: center;
+}
+            /*=====================================Home: Progress Bar=================================*/
+.active_bar {
+    flex: 1;
+    border-radius: 3px;
+    background-color: slateblue;
+    height: 5px;
+}
+.inactive_bar {
+    flex: 1;
+    border-radius: 3px;
+    background-color: white;
+    height: 5px;
+}
+.progressBar {
+    width: 97%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    gap: 3px;
+    cursor: pointer;
+}
+.group-icon {
+    width: 20px;
+    justify-content: left;
+    position: static;
+    height: 20px;
+}
+.progressBar_hover {
+    visibility: hidden;
+    position: absolute;
+    bottom: -45px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 16px;
+    white-space: nowrap; 
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.progressBar:hover .progressBar_hover {
+    visibility: visible; /* Torna visível a caixa de texto */
+    opacity: 1; /* Torna a caixa de texto opaca */
+}
+            /*=====================================Home: Buttons=================================*/
+.button{
+    display: inline-flex;
+    justify-content: center;
+    background-color: black;
+    color: var(--white-color);
+    font-weight: var(--font-semi-bold);
+    padding: 1.25rem 2.5rem;
+    border-radius: 4rem;
+    transition: background-color .4s;
+}
+.button:hover{
+    background-color: red;
+    cursor: pointer;
+}
+            /*=====================================Home: CV=================================*/
+#cv_hubV {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza os elementos */
+    padding-top: 5%;
+}
+
+.cv_button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.cv_options {
+    border: 0.5px solid rgba(255, 255, 255, 0.05);
+    width: fit-content;
+    min-width: 150px;
+    position: absolute;
+    top: 22%; /* Alinha a caixa abaixo do botão */
+    left: 80%;
+    transform: translateX(-50%);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background-color: #191919;
+    border-radius: 4px;
+    text-align: center;
+    
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.cv_option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+.cv_option:hover {
+    background-color: #333;
+    border-radius: 4px;
+}
+.cv_icon {
+    width: 20px;
+    height: auto;
+}
+/* Efeito hover: Mostra as opções apenas quando o mouse está sobre o botão */
+.cv_button:hover + .cv_options,
+.cv_options:hover {
+    opacity: 1;
+    visibility: visible;
+}
+            /*=====================================Home: ID's=================================*/
+#profile_card{
+    background: none;
+    border: none;
+    
+}
+#hubV_1{
+    margin-bottom: 20px;
+}
+#home_hubV{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+/*=================================Contato=====================================*/
+.contato{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+#hubH_ct{
+    gap: 0.9%;
+}
+.ct_card {
+    width: 300px; /* Define um tamanho quadrado */
+    height: 300px;
+    background-color: #191919; /* Cor de fundo */
+    border-radius: 30px; /* Borda arredondada */
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribui os elementos: ícone no topo e texto no final */
+    align-items: flex-start; /* Alinha tudo à esquerda */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    color: white;
+    padding: 20px; /* Espaçamento interno */
+}
+.ct_card:hover {
+    transform: scale(1.05); /* Efeito de crescimento ao passar o mouse */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+.ct_icon {
+    width: 150px; /* Define o tamanho do ícone */
+    height: auto;
+}
+.ct_text {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Mantém o texto alinhado à esquerda */
+    margin-bottom: 10px; /* Dá um pequeno espaço no final */
+}
+.ct_redesocial {
+    font-size: 25px;
+    font-weight: bold;
+}
+.ct_arroba {
+    font-size: 20px;
+    color: #aaa; /* Cor mais suave para o @fixingx */
+}
+#ct_email{
+    width: 600px;
+    background: linear-gradient(145.57deg, #1D1D1D, #000000);
+    border: 0.5px solid rgba(255, 255, 255, 0.05);
+}
+#ct_github{
+    background: linear-gradient(145.57deg, #000000, #1D1D1D);
+    border: 0.5px solid rgba(255, 255, 255, 0.05);
+}
+#ct_linkedin{
+    background: linear-gradient(145.57deg, #3c75c6, #144589);
+    border: 0.5px solid rgba(255, 255, 255, 0.05);
+}
+#ct_instagram{
+    background: url('assets/img/instagram_bkg.png') center/cover no-repeat;
+    border: 0.5px solid rgba(255, 255, 255, 0.05);
+}   
+#ct_beecrowd{
+    background: linear-gradient(180deg, #ffffff, #7507a073);
+    border: 0.5px solid black;
+    
+}  
+#ct_codewars{
+    background: linear-gradient(180deg, #8f0303, #360202);
+    border: 0.5px solid black;
+}  
+#ct_icon_email{
+    width: 110px;
+    height: auto;
+}
+#ct_icon_github{
+    width: 100px;
+    height: auto;
+}
+#ct_icon_beecrowd{
+    padding-top: 10%;
+    width: 210px;
+    height: auto;
+    
+    
+}
+#ct_icon_codewars{
+    width: 100px;
+    height: auto;
+    
+}
+/*=================================Sobre Mim=====================================*/
+.sobremim{
+    justify-content: flex-end;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.sm_title{
+    font-size: 80px;
+    width: 80%;
+    padding-left: 3%;
+}
+.sm_text{
+    font-size: 22px;
+    width: 100%;
+    padding-left: 3%;
+}
+.sm_text p{
+    margin-bottom:5%;
+    justify-content: center;
+}
+.sm_subtitle{
+    font-size: 30px;
+    width: 80%;
+    padding-left: 3%;
+}
+.destaque{
+    color: rgb(7, 161, 2);
+    font-weight: bold; /* Negrito */
+}
+#sm_card{
+    width: 80%;
+    height: 80%;
+    border-top-left-radius: 55px; /* Borda superior esquerda arredondada */
+    border-top-right-radius: 55px; /* Borda superior direita arredondada */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: white;
+    padding:0% 1%;
+    background: rgba(97, 87, 87, 0.26);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.5px);
+    -webkit-backdrop-filter: blur(5.5px);
+    border: 0.5px solid rgba(255, 255, 255, 0.205);
+    border-bottom: 0px;
+}
+#sm_subcard{
+    width: 50%;
+    height: 100%;
+    justify-content: flex-start;
+    padding: 3%;
+    gap: 5%;
+}
+.sm_line{
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Linha muito fina com cor transparente */
+    width: 1px; /* Define a largura da linha */
+    height: 100%;
+    
+}
+#sm_skills {
+    display: flex;
+    align-items: center; 
+    gap: 10px; 
+}
+#sm_skills_v {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.sm_skills_name {
+    text-align: left;
+}
+.sm_skills_bar {
+    width: 100%;
+    height: 10px;
+    background-color: #ddd;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+}
+.sm_skills_percentage {
+    height: 100%;
+    background-color: #4CAF50;
+    border-radius: 5px;
+    animation: fillBars 2.5s 1;
+}
+.sm_skills_icon {
+    width: 50px; /* Ajuste conforme necessário */
+    height: auto;
+}
+@keyframes fillBars{
+    from{
+        width:0;
+    }
+    to{
+        width: 100%;
+    }
+}
+/*=================================Sobre Mim=====================================*/
+.projetos{
+    justify-content: flex-start;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#pj_card{
+    width: 80%;
+    height: 20%;
+    border-bottom-left-radius: 55px; /* Borda superior esquerda arredondada */
+    border-bottom-right-radius: 55px; /* Borda superior direita arredondada */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: white;
+    background: rgba(97, 87, 87, 0.26);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.5px);
+    -webkit-backdrop-filter: blur(5.5px);
+    border: 0.5px solid rgba(255, 255, 255, 0.205);
+    border-top: 0px;
+    align-items: flex-end;
+    padding-bottom: 1%;
+}
+.pj_title{
+    font-size: 80px;
+    width: 100%;
+    padding-left: 3%;
+    height:auto;
+    
+}
+
+
+
+
