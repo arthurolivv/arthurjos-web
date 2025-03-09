@@ -104,49 +104,6 @@
 
 }
 
-/*=================================Reset=====================================*/
-
-*, *::before, *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  a { text-decoration: none; }
-  
-  li { list-style: none; }
-  
-  img, ion-icon, a, button, time, span { display: block; }
-  
-  button {
-    font: inherit;
-    background: none;
-    border: none;
-    text-align: left;
-    cursor: pointer;
-  }
-  
-  input, textarea {
-    display: block;
-    width: 100%;
-    background: none;
-    font: inherit;
-  }
-  
-  ::selection {
-    background: var(--orange-yellow-crayola);
-    color: var(--smoky-black);
-  }
-  
-  :focus { outline-color: var(--orange-yellow-crayola); }
-  
-  html { font-family: var(--ff-poppins); }
-  
-  body { background: var(--smoky-black); }
-
-/*=================================Main=====================================*/
-
-
 /*========================================Geral==============================*/
   .hubH{
     display: flex;
@@ -160,11 +117,7 @@
     gap: 10px;
     justify-content: center;
   }
-  #sec_main{
-    position: relative;
-    width: 100%;
-    height: 100vh;
-  }
+
 
 /*=====================================Home=================================*/
 .headerHome{
@@ -611,6 +564,46 @@
 
 /*##########################################################################################################*/
 
+/*=================================Reset=====================================*/
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  a { text-decoration: none; }
+  
+  li { list-style: none; }
+  
+  img, ion-icon, a, button, time, span { display: block; }
+  
+  button {
+    font: inherit;
+    background: none;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+  }
+  
+  input, textarea {
+    display: block;
+    width: 100%;
+    background: none;
+    font: inherit;
+  }
+  
+  ::selection {
+    background: var(--orange-yellow-crayola);
+    color: var(--smoky-black);
+  }
+  
+  :focus { outline-color: var(--orange-yellow-crayola); }
+  
+  html { font-family: var(--ff-poppins); }
+  
+  body { background: var(--smoky-black); }
+  
 /*=================================Reutilizaveis=====================================*/
 
 .sidebar,
@@ -739,6 +732,14 @@ article.active {
   border-radius: inherit;
   z-index: -1;
 }
+
+/*=================================Main=====================================*/
+
+main {
+    margin: 15px 12px;
+    margin-bottom: 75px;
+    min-width: 259px;
+  }
   
 /*=================================Sidebar=====================================*/
 
@@ -874,7 +875,6 @@ article.active {
   
   .social-item .social-link:hover { color: var(--light-gray); }
   
-  
 /*=================================Navbar=====================================*/
 
 .navbar {
@@ -908,20 +908,20 @@ article.active {
   .navbar-link:hover,
   .navbar-link:focus { color: var(--light-gray-70); }
   
-  .navbar-link.active { color: var(--orange-yellow-crayola); }  
+  .navbar-link.active { color: var(--orange-yellow-crayola); }   
   
 /*=================================Sobre=====================================*/
 
-.about .article_title { margin-bottom: 15px; }
+.about .article-title { margin-bottom: 15px; }
 
-.about_text {
+.about-text {
   color: var(--light-gray);
   font-size: var(--fs-6);
   font-weight: var(--fw-300);
   line-height: 1.6;
 }
 
-.about_text p { margin-bottom: 15px; }
+.about-text p { margin-bottom: 15px; }
 
 /*=================================Sobre - Service=====================================*/
 
@@ -970,7 +970,6 @@ article.active {
 
 /*=================================Sobre - Testimonials=====================================*/
 
-
 .testimonials { margin-bottom: 30px; }
 
 .testimonials-title { margin-bottom: 20px; }
@@ -1017,7 +1016,6 @@ article.active {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
-
 
 /*=================================Sobre - Testimonials_Modal=====================================*/
 
@@ -1230,7 +1228,6 @@ article.active {
 }
 
 /*=================================Resume - Skills=====================================*/
-
 
 .skills-title { margin-bottom: 20px; }
 
@@ -1625,7 +1622,7 @@ article.active {
   /*=================================RESPONSIVIDADE - maior que 580px=====================================*/
 
   @media (min-width: 580px) {
-
+  
     :root {
   
       /**
@@ -1644,39 +1641,39 @@ article.active {
   
 /*=================================RESPONSIVIDADE - maior que 580px - Reutilizáveis=====================================*/
 
-    .sidebar, article {
-      width: 520px;
-      margin-inline: auto;
-      padding: 30px;
-    }
-  
-    .article-title {
-      font-weight: var(--fw-600);
-      padding-bottom: 15px;
-    }
-  
-    .article-title::after {
-      width: 40px;
-      height: 5px;
-    }
-  
-    .icon-box {
-      width: 48px;
-      height: 48px;
-      border-radius: 12px;
-      font-size: 18px;
-    }
+.sidebar, article {
+    width: 520px;
+    margin-inline: auto;
+    padding: 30px;
+  }
+
+  .article-title {
+    font-weight: var(--fw-600);
+    padding-bottom: 15px;
+  }
+
+  .article-title::after {
+    width: 40px;
+    height: 5px;
+  }
+
+  .icon-box {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    font-size: 18px;
+  }
 
 /*=================================RESPONSIVIDADE - maior que 580px - Main=====================================*/
 
-#sec_main {
+main {
     margin-top: 60px;
     margin-bottom: 100px;
   }
 
 /*=================================RESPONSIVIDADE - maior que 580px - Sidebar=====================================*/
 
-  .sidebar {
+.sidebar {
     max-height: 180px;
     margin-bottom: 30px;
   }
@@ -1719,10 +1716,9 @@ article.active {
  
  .navbar { border-radius: 20px 20px 0 0; }
 
- .navbar-list { gap: 20px; }
+  .navbar-list { gap: 20px; }
 
- .navbar-link { --fs-8: 14px; }
-
+  .navbar-link { --fs-8: 14px; }
   /*=================================RESPONSIVIDADE - maior que 580px - Sobre Mim=====================================*/
 
   .about .article-title { margin-bottom: 20px; }
@@ -1731,53 +1727,53 @@ article.active {
 
 /*=================================RESPONSIVIDADE - maior que 580px - Service=====================================*/
 
-    .service-item {
-        display: flex;
-        justify-content: flex-start;
-        align-items: flex-start;
-        gap: 18px;
-        padding: 30px;
-      }
-    
-      .service-icon-box {
-        margin-bottom: 0;
-        margin-top: 5px;
-      }
+.service-item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 18px;
+    padding: 30px;
+  }
 
-      .service-content-box { text-align: left; }
+  .service-icon-box {
+    margin-bottom: 0;
+    margin-top: 5px;
+  }
+
+  .service-content-box { text-align: left; }
 
 /*=================================RESPONSIVIDADE - maior que 580px - Testimonials=====================================*/
 
- .testimonials-title { margin-bottom: 25px; }
+.testimonials-title { margin-bottom: 25px; }
 
-  .testimonials-list {
-    gap: 30px;
-    margin: 0 -30px;
-    padding: 30px;
-    padding-bottom: 35px;
-  }
+.testimonials-list {
+  gap: 30px;
+  margin: 0 -30px;
+  padding: 30px;
+  padding-bottom: 35px;
+}
 
-  .content-card {
-    padding: 30px;
-    padding-top: 25px;
-  }
+.content-card {
+  padding: 30px;
+  padding-top: 25px;
+}
 
-  .testimonials-avatar-box {
-    transform: translate(30px, -30px);
-    border-radius: 20px;
-  }
+.testimonials-avatar-box {
+  transform: translate(30px, -30px);
+  border-radius: 20px;
+}
 
-  .testimonials-avatar-box img { width: 80px; }
+.testimonials-avatar-box img { width: 80px; }
 
-  .testimonials-item-title {
-    margin-bottom: 10px;
-    margin-left: 95px;
-  }
+.testimonials-item-title {
+  margin-bottom: 10px;
+  margin-left: 95px;
+}
 
-  .testimonials-text {
-    line-clamp: 2;
-    -webkit-line-clamp: 2;
-  }
+.testimonials-text {
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+}
 
 /*=================================RESPONSIVIDADE - maior que 580px - Testimonials Modal=====================================*/
 
@@ -1875,16 +1871,16 @@ article.active {
 
 /*=================================RESPONSIVIDADE - maior que 768px - Reutilizaveis=====================================*/
   
-    .sidebar, article { width: 700px; }
-  
-    .has-scrollbar::-webkit-scrollbar-button { width: 100px; }
+.sidebar, article { width: 700px; }
+
+.has-scrollbar::-webkit-scrollbar-button { width: 100px; }
   
 /*=================================RESPONSIVIDADE - maior que 768px - Sidebar=====================================*/
   
-    .contacts-list {
-      grid-template-columns: 1fr 1fr;
-      gap: 30px 15px;
-    }
+.contacts-list {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px 15px;
+  }
   
 /*=================================RESPONSIVIDADE - maior que 768px - Navbar=====================================*/
 
@@ -1895,37 +1891,37 @@ article.active {
   
 /*================================RESPONSIVIDADE - maior que 768px - Testimonials modal=====================================*/
 
-    .testimonials-modal {
-      gap: 35px;
-      max-width: 680px;
-    }
+.testimonials-modal {
+    gap: 35px;
+    max-width: 680px;
+  }
   
     .modal-avatar-box img { width: 80px; }
   
 /*=================================RESPONSIVIDADE - maior que 768px -  Portfolio=====================================*/
   
-    .article-title { padding-bottom: 20px; }
-  
-    .filter-select-box { display: none; }
-  
-    .filter-list {
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      gap: 25px;
-      padding-left: 5px;
-      margin-bottom: 30px;
-    }
-  
-    .filter-item button {
-      color: var(--light-gray);
-      font-size: var(--fs-5);
-      transition: var(--transition-1);
-    }
-  
-    .filter-item button:hover { color: var(--light-gray-70); }
-  
-    .filter-item button.active { color: var(--orange-yellow-crayola); }
+.article-title { padding-bottom: 20px; }
+
+.filter-select-box { display: none; }
+
+.filter-list {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 25px;
+  padding-left: 5px;
+  margin-bottom: 30px;
+}
+
+.filter-item button {
+  color: var(--light-gray);
+  font-size: var(--fs-5);
+  transition: var(--transition-1);
+}
+
+.filter-item button:hover { color: var(--light-gray-70); }
+
+.filter-item button.active { color: var(--orange-yellow-crayola); }
   
 /*=================================RESPONSIVIDADE - maior que 768px -  Portfolio e blog grid=====================================*/
   
@@ -1933,69 +1929,69 @@ article.active {
   
 /*=================================RESPONSIVIDADE - maior que 768px -  Contatos=====================================*/
   
-    .input-wrapper { grid-template-columns: 1fr 1fr; }
-  
-    .form-btn {
-      width: max-content;
-      margin-left: auto;
-    }
-    
-  }
+.input-wrapper { grid-template-columns: 1fr 1fr; }
+
+.form-btn {
+  width: max-content;
+  margin-left: auto;
+}
+
+}
 
 /*=================================RESPONSIVIDADE - maior que 1024px=====================================*/
 
  @media (min-width: 1024px) {
   
     :root {
-  
-      /**
-      * shadow
-      */
-  
-      --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.125);
-      --shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.125);
-      --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.125);
-  
-    }
+
+        /**
+        * shadow
+        */
+    
+        --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.125);
+        --shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.125);
+        --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.125);
+    
+      }
 
 /*=================================RESPONSIVIDADE - maior que 1024px - Reutilizaveis=====================================*/
 
   
-    .sidebar, article {
-      width: 950px;
-      box-shadow: var(--shadow-5);
-    }
+.sidebar, article {
+    width: 950px;
+    box-shadow: var(--shadow-5);
+  }
   
 /*=================================RESPONSIVIDADE - maior que 1024px - Main=====================================*/
 
-#sec_main { margin-bottom: 60px; }
-  
-    .main_content {
-      position: relative;
-      width: max-content;
-      margin: auto;
-    }
+main { margin-bottom: 60px; }
+
+  .main-content {
+    position: relative;
+    width: max-content;
+    margin: auto;
+  }
   
 /*=================================RESPONSIVIDADE - maior que 1024px - Navbar=====================================*/
 
-    .navbar {
-      position: absolute;
-      bottom: auto;
-      top: 0;
-      left: auto;
-      right: 0;
-      width: max-content;
-      border-radius: 0 20px;
-      padding: 0 20px;
-      box-shadow: none;
-    }
-  
-    .navbar-list {
-      gap: 30px;
-      padding: 0 20px;
-    }
-  
-    .navbar-link { font-weight: var(--fw-500); }
+.navbar {
+    position: absolute;
+    bottom: auto;
+    top: 0;
+    left: auto;
+    right: 0;
+    width: max-content;
+    border-radius: 0 20px;
+    padding: 0 20px;
+    box-shadow: none;
+  }
+
+  .navbar-list {
+    gap: 30px;
+    padding: 0 20px;
+  }
+
+  .navbar-link { font-weight: var(--fw-500); }
   
 /*=================================RESPONSIVIDADE - maior que 1024px - Sobre Mim=====================================*/
 
@@ -2030,93 +2026,93 @@ article.active {
 @media (min-width: 1250px) {
   
     body::-webkit-scrollbar { width: 20px; }
-  
-    body::-webkit-scrollbar-track { background: var(--smoky-black); }
-  
-    body::-webkit-scrollbar-thumb {
-      border: 5px solid var(--smoky-black);
-      background: hsla(0, 0%, 100%, 0.1);
-      border-radius: 20px;
-      box-shadow: inset 1px 1px 0 hsla(0, 0%, 100%, 0.11),
-                  inset -1px -1px 0 hsla(0, 0%, 100%, 0.11);
-    }
-  
-    body::-webkit-scrollbar-thumb:hover { background: hsla(0, 0%, 100%, 0.15); }
-  
-    body::-webkit-scrollbar-button { height: 60px; }
+
+  body::-webkit-scrollbar-track { background: var(--smoky-black); }
+
+  body::-webkit-scrollbar-thumb {
+    border: 5px solid var(--smoky-black);
+    background: hsla(0, 0%, 100%, 0.1);
+    border-radius: 20px;
+    box-shadow: inset 1px 1px 0 hsla(0, 0%, 100%, 0.11),
+                inset -1px -1px 0 hsla(0, 0%, 100%, 0.11);
+  }
+
+  body::-webkit-scrollbar-thumb:hover { background: hsla(0, 0%, 100%, 0.15); }
+
+  body::-webkit-scrollbar-button { height: 60px; }
   
 /*=================================RESPONSIVIDADE - maior que 1250px - Reutilizaveis=====================================*/
 
-    .sidebar, article { width: auto; }
-  
-    article { min-height: 100%; }
+.sidebar, article { width: auto; }
+
+article { min-height: 100%; }
   
 /*=================================RESPONSIVIDADE - maior que 1250px - Main=====================================*/
 
-#sec_main {
-      max-width: 1200px;
-      margin-inline: auto;
-      display: flex;
-      justify-content: center;
-      align-items: stretch;
-      gap: 25px;
-    }
-  
-    .main_content {
-      min-width: 75%;
-      width: 75%;
-      margin: 0;
-    }
+main {
+    max-width: 1200px;
+    margin-inline: auto;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 25px;
+  }
+
+  .main-content {
+    min-width: 75%;
+    width: 75%;
+    margin: 0;
+  }
   
 /*=================================RESPONSIVIDADE - maior que 1250px - Sidebar=====================================*/
 
-    .sidebar {
-      position: sticky;
-      top: 60px;
-      max-height: max-content;
-      height: 100%;
-      margin-bottom: 0;
-      padding-top: 60px;
-      z-index: 1;
-    }
-  
-    .sidebar-info { flex-direction: column; }
-  
-    .avatar-box img { width: 150px; }
-  
-    .info-content .name {
-      white-space: nowrap;
-      text-align: center;
-    }
-  
-    .info-content .title { margin: auto; }
-  
-    .info_more-btn { display: none; }
-  
-    .sidebar-info_more {
-      opacity: 1;
-      visibility: visible;
-    }
-  
-    .contacts-list { grid-template-columns: 1fr; }
-  
-    .contact-info :is(.contact-link) {
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-  
-    .contact-info :is(.contact-link, time, address) {
-      --fs-7: 14px;
-      font-weight: var(--fw-300);
-    }
-  
-    .separator:last-of-type {
-      margin: 15px 0;
-      opacity: 0;
-    }
-  
-    .social-list { justify-content: center; }
+.sidebar {
+    position: sticky;
+    top: 60px;
+    max-height: max-content;
+    height: 100%;
+    margin-bottom: 0;
+    padding-top: 60px;
+    z-index: 1;
+  }
+
+  .sidebar-info { flex-direction: column; }
+
+  .avatar-box img { width: 150px; }
+
+  .info-content .name {
+    white-space: nowrap;
+    text-align: center;
+  }
+
+  .info-content .title { margin: auto; }
+
+  .info_more-btn { display: none; }
+
+  .sidebar-info_more {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .contacts-list { grid-template-columns: 1fr; }
+
+  .contact-info :is(.contact-link) {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .contact-info :is(.contact-link, time, address) {
+    --fs-7: 14px;
+    font-weight: var(--fw-300);
+  }
+
+  .separator:last-of-type {
+    margin: 15px 0;
+    opacity: 0;
+  }
+
+  .social-list { justify-content: center; }
   
 /*=================================RESPONSIVIDADE - maior que 1250px - Resume=====================================*/
 
