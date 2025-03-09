@@ -106,7 +106,7 @@
         
     </header>
     
-    <main class="main">
+    <main>
 
         <!--<section class="sobremim">
             <div class="sm_title">Sobre Mim</div>
@@ -264,134 +264,149 @@
         </section>-->
         
         <section id="sec_main">
-            <aside class="sidebar">
-                <div class="side_info">
-                    <figure class="side_info_profileImg">
-                        <img src="assets/img/fotos/eu.png">
-                    </figure>
+            <aside class="sidebar" data-sidebar>
 
-                    <div class="side_info_conteudo">
-                        <h1 class="name">Arthur Santos</h1>
-                        <p class="title">Auxiliar Docente - TI</p>
-                    </div>
-
-                    <button class="btn_side_showContacts">
-                        <span>Exibir Contatos</span>
-
-                        <ion-icon name="chevron-down"></ion-icon>
-                    </button>
+                <div class="sidebar-info">
+          
+                  <figure class="avatar-box">
+                    <img src="assets/img/fotos/eu.png" alt="Richard hanrick" width="80">
+                  </figure>
+          
+                  <div class="info-content">
+                    <h1 class="name" title="Richard hanrick">Richard hanrick</h1>
+          
+                    <p class="title">Web developer</p>
+                  </div>
+          
+                  <button class="info_more-btn" data-sidebar-btn>
+                    <span>Show Contacts</span>
+          
+                    <ion-icon name="chevron-down"></ion-icon>
+                  </button>
+          
                 </div>
-
-                <div class="side_info_mais">
-
-                    <div class="separator"></div>
-
-                    <ul class="cttList">
-
-                        <li class="cttItem">
-                            <div class="icon_box">
-                                <ion-icon name="mail-outline"></ion-icon>
-                            </div>
-
-                            <div class="cttInfo">
-                                <p class="cttTitle">E-mail</p>
-                            </div>
-
-                            <a href="mailto:art.jacintho14@gmail.com" class="cttLink">art.jacintho14@gmail.com</a>
-                        </li>
-
-                        <li class="cttItem">
-                            <div class="icon_box">
-                                <ion-icon name="phone-portrair-outline"></ion-icon>
-                            </div>
-
-                            <div class="cttInfo">
-                                <p class="cttTitle">Telefone</p>
-                            </div>
-
-                            <a href="https://wa.me/11986883885" class="cttLink">+55 (11) 98688-3885</a>
-                        </li>
-
-                        <li class="cttItem">
-                            <div class="icon_box">
-                                <ion-icon name="calendar-outline"></ion-icon>
-                            </div>
-
-                            <div class="cttInfo">
-                                <p class="cttTitle">Idade</p>
-                            </div>
-
-                            <p class="cttLink">20 anos</p>
-                        </li>
-
-                        <li class="cttItem">
-                            <div class="icon_box">
-                                <ion-icon name="location-outline"></ion-icon>
-                            </div>
-
-                            <div class="cttInfo">
-                                <p class="cttTitle">Localização</p>
-                            </div>
-
-                            <p class="cttLink">São Paulo, SP - Brasil</p>
-                        </li>
-                    </ul>
-
-                    <div class="separator"></div>
-
-                    <ul class="socialList">
-
-                        <li class="socialItem">
-                            <a href="#" class="socialLink">
-                              <ion-icon name="logo-facebook"></ion-icon>
-                            </a>
-                        </li>
-
-                        <li class="socialItem">
-                            <a href="#" class="socialLink">
-                              <ion-icon name="logo-linkedin"></ion-icon>
-                            </a>
-                        </li>
-
-                        <li class="socialItem">
-                            <a href="#" class="socialLink">
-                              <ion-icon name="logo-github"></ion-icon>
-                            </a>
-                        </li>
-                        
-                        
-
-                    </ul>
-
+          
+                <div class="sidebar-info_more">
+          
+                  <div class="separator"></div>
+          
+                  <ul class="contacts-list">
+          
+                    <li class="contact-item">
+          
+                      <div class="icon-box">
+                        <ion-icon name="mail-outline"></ion-icon>
+                      </div>
+          
+                      <div class="contact-info">
+                        <p class="contact-title">Email</p>
+          
+                        <a href="mailto:richard@example.com" class="contact-link">richard@example.com</a>
+                      </div>
+          
+                    </li>
+          
+                    <li class="contact-item">
+          
+                      <div class="icon-box">
+                        <ion-icon name="phone-portrait-outline"></ion-icon>
+                      </div>
+          
+                      <div class="contact-info">
+                        <p class="contact-title">Phone</p>
+          
+                        <a href="tel:+12133522795" class="contact-link">+1 (213) 352-2795</a>
+                      </div>
+          
+                    </li>
+          
+                    <li class="contact-item">
+          
+                      <div class="icon-box">
+                        <ion-icon name="calendar-outline"></ion-icon>
+                      </div>
+          
+                      <div class="contact-info">
+                        <p class="contact-title">Birthday</p>
+          
+                        <time datetime="1982-06-23">June 23, 1982</time>
+                      </div>
+          
+                    </li>
+          
+                    <li class="contact-item">
+          
+                      <div class="icon-box">
+                        <ion-icon name="location-outline"></ion-icon>
+                      </div>
+          
+                      <div class="contact-info">
+                        <p class="contact-title">Location</p>
+          
+                        <address>Sacramento, California, USA</address>
+                      </div>
+          
+                    </li>
+          
+                  </ul>
+          
+                  <div class="separator"></div>
+          
+                  <ul class="social-list">
+          
+                    <li class="social-item">
+                      <a href="#" class="social-link">
+                        <ion-icon name="logo-facebook"></ion-icon>
+                      </a>
+                    </li>
+          
+                    <li class="social-item">
+                      <a href="#" class="social-link">
+                        <ion-icon name="logo-twitter"></ion-icon>
+                      </a>
+                    </li>
+          
+                    <li class="social-item">
+                      <a href="#" class="social-link">
+                        <ion-icon name="logo-instagram"></ion-icon>
+                      </a>
+                    </li>
+          
+                  </ul>
+          
                 </div>
-
-            </aside>
+          
+              </aside>
 
             <div class="main_content">
 
                 <nav class="navbar">
-                    <ul class="navbar_list">
-                        <li class="navbar_item">
-                            <button class="navbar_link  active" data_nav_link>Sobre</button>
-                        </li>
 
-                        <li class="navbar_item">
-                            <button class="navbar_link" data_nav_link>Resumo</button>
-                        </li>
-
-                        <li class="navbar_item">
-                            <button class="navbar_link" data_nav_link>Portfolio</button>
-                        </li>
-
-                        <li class="navbar_item">
-                            <button class="navbar_link" data_nav_link>Blog</button>
-                        </li>
-
-                        <li class="navbar_item">
-                            <button class="navbar_link" data_nav_link>Contato</button>
-                        </li>
+                    <ul class="navbar-list">
+            
+                      <li class="navbar-item">
+                        <button class="navbar-link  active" data-nav-link>About</button>
+                      </li>
+            
+                      <li class="navbar-item">
+                        <button class="navbar-link" data-nav-link>Resume</button>
+                      </li>
+            
+                      <li class="navbar-item">
+                        <button class="navbar-link" data-nav-link>Portfolio</button>
+                      </li>
+            
+                      <li class="navbar-item">
+                        <button class="navbar-link" data-nav-link>Blog</button>
+                      </li>
+            
+                      <li class="navbar-item">
+                        <button class="navbar-link" data-nav-link>Contact</button>
+                      </li>
+            
                     </ul>
-                </nav>
+            
+                  </nav>
 
                 <article class="about active" data_page="about">
                     <header>
@@ -1310,12 +1325,8 @@
                             </button>
                 
                           </form>
-                
                         </section>
-                
                       </article>
-                
-
             </div>
         </section>
 
