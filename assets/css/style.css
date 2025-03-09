@@ -106,48 +106,52 @@
 
 /*=================================Reset=====================================*/
 
-* {
+*, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-body,
-input,
-button,
-textarea
- {
-    font-family: lexend;
+  }
+  
+  a { text-decoration: none; }
+  
+  li { list-style: none; }
+  
+  img, ion-icon, a, button, time, span { display: block; }
+  
+  button {
+    font: inherit;
+    background: none;
     border: none;
-    outline: none;
-}
-body{
-    background: black; /*var(--container-color);*/
-    color: var(--white-color);
-}
-input,
-button,
-textarea {
-  border: none;
-  outline: none;
-}
-h1, h2, h3, h4 {
-    color: var(--white-color);
-    font-weight: var(--font-semi-bold);
+    text-align: left;
+    cursor: pointer;
   }
-html{
-    scroll-behavior: smooth;
-}
-a{
-    text-decoration: none;
-}
-ul{
-    list-style: none;
-}
-img {
+  
+  input, textarea {
     display: block;
-    max-width: 100%;
-    height: auto;
+    width: 100%;
+    background: none;
+    font: inherit;
   }
+  
+  ::selection {
+    background: var(--orange-yellow-crayola);
+    color: var(--smoky-black);
+  }
+  
+  :focus { outline-color: var(--orange-yellow-crayola); }
+  
+  html { font-family: var(--ff-poppins); }
+  
+  body { background: var(--smoky-black); }
+
+/*=================================Main=====================================*/
+
+main {
+    margin: 15px 12px;
+    margin-bottom: 75px;
+    min-width: 259px;
+  }
+
 /*========================================Geral==============================*/
   .hubH{
     display: flex;
