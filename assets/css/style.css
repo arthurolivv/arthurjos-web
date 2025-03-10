@@ -1,21 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
 :root {
---hue: 358;
---first-color: hsl(var(--hue), 80%, 49%);
---first-color-alt: hsl(var(--hue), 76%, 45%);
---white-color: hsl(0, 0%, 98%);
---black-color: hsl(0, 0%, 1%);
---text-color: hsl(var(--hue), 2%, 66%);
---body-color: hsl(var(--hue), 100%, 1%);
---container-color: hsl(var(--hue), 2%, 10%);
---conic-gradient: conic-gradient(
-                from 150deg at 50% 45%,
-                hsl(var(--hue), 80%, 20%) 0deg,
-                hsl(var(--hue), 80%, 48%) 140deg,
-                hsl(var(--hue), 80%, 20%) 360deg);
 
-
-    
     --bg-gradient-onyx: linear-gradient(
     to bottom right, 
     hsl(240, 1%, 25%) 3%, 
@@ -117,29 +102,68 @@
     gap: 10px;
     justify-content: center;
   }
-
-
 /*=====================================Home=================================*/
 .headerHome{
     position: relative;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 1px 5px;
     overflow: hidden; /* Evita que o ::before ultrapasse os limites */
+    background: linear-gradient(to top, rgb(0, 0, 0), rgb(10, 10, 10));
+ 
 }
-.headerHome::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('../img/bkg/19852122_6195005.jpg') center/cover no-repeat;
-    filter: blur(10px); /* Aplica o blur na imagem de fundo */
-    z-index: -1; /* Mantém a camada de fundo atrás do conteúdo */
+@keyframes color{
+  0%{
+    filter: hue-rotate(0deg);
+  }
+  100%{
+    filter: hue-rotate(360deg);
+  }
+}
+
+.home_light,
+.home_tube{
+  height: 1px;
+  width: 500px;
+  position: relative;
+  top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  background: white;
+  perspective: 160px;
+  box-shadow: 
+            0 0px 4px rgb(255, 255, 255),
+            0 0px 40px rgba(255, 255, 255,0719),
+            0 20px 40px rgb(211, 211, 255);
+  opacity: 1;
+}
+.home_tube{
+  position: relative;
+  top: 0px;
+}
+.home_tube::before{
+  content: "";
+  position: absolute;
+  height: 50px;
+  width: 510px;
+  top: -50px;
+  left: -5px;
+  border-radius: 2px;
+  background: linear-gradient(to top, rgb(10, 10, 10), rgb(0, 0, 0));
+
+}
+.home_light::before{
+  content: "";
+  position: absolute;
+  height: 200px;
+  width: 500px;
+  background: linear-gradient(to bottom, rgb(253, 253, 253), rgba(255, 255, 255, 0.534));
+  transform: scale(1.2) rotateX(50deg);
+  filter: blur(50px);
+  opacity: 0.2;
 }
 .home_name{
     text-align: center;
@@ -158,23 +182,22 @@
     gap: 15px;
     width: 100%;
 }
-.home_circle {
+.home-avatar-box {
     background: rgba(211, 68, 255, 0.062); /* Cor semi-transparente */
-    height: 300px;
-    width: 300px;
+    height: 150px;
+    width: 150px;
     border-radius: 100%;
-    display: grid;
-    margin-block: 1rem;
     margin: auto;
     overflow: hidden;
     backdrop-filter: blur(0.1px); /* Desfoque do fundo */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
     border: 0.5px solid rgba(255, 255, 255, 0.05);
 }
-.home_img{
-    width: auto;
-    align-items: end;
-    align-self: flex-end;
+.home-avatar-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
 }
             /*=====================================Home: Bkg=================================*/
 .bkg {
@@ -763,6 +786,7 @@ main {
   .avatar-box {
     background: var(--bg-gradient-onyx);
     border-radius: 20px;
+    overflow: hidden;
   }
   
   .info-content .name {
