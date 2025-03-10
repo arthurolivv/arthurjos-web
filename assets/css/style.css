@@ -124,21 +124,43 @@
   }
 }
 
-.home_light,
-.home_tube{
+.home_light{
   height: 1px;
   width: 500px;
   position: relative;
   top: 100px;
   margin-left: auto;
   margin-right: auto;
-  background: white;
+  background: rgba(255, 255, 255, 0.070);
   perspective: 160px;
   box-shadow: 
             0 0px 4px rgb(255, 255, 255),
             0 0px 40px rgba(255, 255, 255,0719),
             0 20px 40px rgb(211, 211, 255);
-  opacity: 1;
+  animation: acenderLampada 2s ease-in-out forwards;
+}
+@keyframes acenderLampada {
+  0% {
+    box-shadow: 
+      0 0px 4px rgb(255, 255, 255), 
+      0 0px 40px rgba(255, 255, 255, 0.3), /* Começo suave */
+      0 20px 40px rgb(211, 211, 255);
+    opacity: 0; /* Começa com pouca opacidade */
+  }
+  50% {
+    box-shadow: 
+      0 0px 10px rgb(255, 255, 255), 
+      0 0px 80px rgba(255, 255, 255, 0.6), /* Aumentando o brilho */
+      0 20px 80px rgb(211, 211, 255);
+    opacity: 0.5; /* Aumenta a opacidade */
+  }
+  100% {
+    box-shadow: 
+      0 0px 20px rgb(255, 255, 255), 
+      0 0px 120px rgba(255, 255, 255, 0.9), /* Brilho intenso */
+      0 20px 120px rgb(211, 211, 255);
+    opacity: 1; /* Opacidade total */
+  }
 }
 .home_tube{
   position: relative;
@@ -153,18 +175,31 @@
   left: -5px;
   border-radius: 2px;
   background: linear-gradient(to top, rgb(10, 10, 10), rgb(0, 0, 0));
-
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
-.home_light::before{
+.home_light::before {
   content: "";
   position: absolute;
-  height: 200px;
+  height: 250px;
   width: 500px;
-  background: linear-gradient(to bottom, rgb(253, 253, 253), rgba(255, 255, 255, 0.534));
-  transform: scale(1.2) rotateX(50deg);
-  filter: blur(50px);
+  background: linear-gradient(to bottom, rgb(255, 255, 255), rgba(255, 255, 255, 0.534));
   opacity: 0.2;
+  animation: acenderLuz 2s ease-in-out forwards; /* Animação de acender a luz */
 }
+@keyframes acenderLuz {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) rotateX(50deg);
+    filter: blur(100px);
+  }
+  100% {
+    opacity: 0.2;
+    transform: scale(1.4) rotateX(50deg);
+    filter: blur(50px);
+  }
+}
+
 .home_name{
     text-align: center;
 }
