@@ -110,6 +110,7 @@
   height: 100vh;
   align-items: center;
   display: flex;
+  justify-content: space-between;
   flex-direction: column;
   padding-top: 10%;
   overflow: hidden;
@@ -159,6 +160,7 @@
             0 0px 40px rgba(255, 255, 255,0719),
             0 20px 40px rgb(211, 211, 255);
   animation: acenderLampada 2s ease-in-out forwards;
+  
 }
 @keyframes acenderLampada {
   0% {
@@ -200,6 +202,7 @@
   background: linear-gradient(to top, rgb(10, 10, 10), rgb(0, 0, 0));
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+  
   
 }
 .home_light::before {
@@ -296,6 +299,35 @@
 .home-social-link:hover ion-icon {
   font-size: 30px; /* Ajusta o tamanho do ícone */
   color: white;
+}
+.home-seemore{
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20%;
+  
+}
+.icon{
+  display: inline-block;
+  font-size: 44px;
+  color: white;
+  animation: float 3s ease-in-out infinite;
+}
+.ri-arrow-down-s-line{
+  animation-delay: 0s;
+}
+@keyframes float{
+  0%{
+    transform: translateY(0);
+  }
+  50%{
+    transform: translateY(-10px);
+  }
+  100%{
+    transform: translateY(0);
+  }
 }
 /*=====================================Home: CV=================================*/
 #cv_hubV {
