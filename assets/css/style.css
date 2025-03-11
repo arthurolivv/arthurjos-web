@@ -223,19 +223,9 @@
     filter: blur(50px);
   }
 }
-/* Para a lista, remover os pontos de lista e garantir que o conteúdo seja centralizado */
-.social-list {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  gap: 10px;
-  justify-content: flex-start;
-  align-items: center;
-}
 
-/* Cada item da lista */
-.social-item {
-  display: inline-block;
+#home-social-list{
+  margin:5%;
 }
 
 /* Estilo dos links */
@@ -243,54 +233,70 @@
   display: inline-flex; /* Flex para alinhar o ícone e o texto */
   align-items: center;
   justify-content: center; /* Centraliza o conteúdo */
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   margin: 0 5px;
   background-color: white;
   border-radius: 50px;
   cursor: pointer;
   overflow: hidden;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-  transition: width 0.3s ease-out;
+  transition: width 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Animação de expansão */
   padding: 0 10px; /* Garante que haja espaço para o texto quando expandir */
   position: relative; /* Necessário para ajustar o texto */
 }
 
 /* Estilo do ícone */
 .home-social-link ion-icon {
-  font-size: 50px; /* Tamanho do ícone */
-  transition: font-size 0.3s ease-out;
+  font-size: 30px; /* Tamanho do ícone */
 }
 
 /* O texto (span) será escondido por padrão */
 .home-social-link span {
   display: none; /* Inicialmente esconde o texto */
-  margin-left: 10px;
+  margin-left: 0px;
   color: white;
   font-size: 16px;
+  white-space: nowrap; /* Impede a quebra de linha */
 }
 
 /* Quando o link for expandido */
 .home-social-link:hover {
-  width: 200px; /* Expande o link ao passar o mouse */
+  width: 150px; /* Expande o link ao passar o mouse */
   justify-content: flex-start; /* Alinha o conteúdo à esquerda */
+  background-color: black; /* Altera a cor de fundo ao passar o mouse */
+  border: 0.5px solid rgba(255, 255, 255, 0.247);
+}
+
+#home-cv-icon:hover{
+  width: 210px;
+}
+
+#home-cv-icon:hover span{
+  margin-left: 5%;
+}
+
+#home-share-icon:hover{
+  width: 250px;
+  
+}
+
+#home-share-icon:hover span{
+  margin-left: 5%;
 }
 
 /* Exibe o texto ao passar o mouse */
 .home-social-link:hover span {
   display: inline-block;
+  text-align: center;
+  margin-left: 10%;
+  font-size: 18px; /* Ajusta o tamanho do texto */
 }
 
 .home-social-link:hover ion-icon {
   font-size: 30px; /* Ajusta o tamanho do ícone */
-
+  color: white;
 }
-
-.home-social-link:hover {
-  background-color: #3498db; /* Altera a cor de fundo ao passar o mouse */
-}
-
-
 /*=====================================Home: CV=================================*/
 #cv_hubV {
     position: relative;
@@ -350,36 +356,7 @@
     opacity: 1;
     visibility: visible;
 }
-/*=================================Sobre Mim=====================================*/
-.projetos{
-    justify-content: flex-start;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-#pj_card{
-    width: 80%;
-    height: 20%;
-    border-bottom-left-radius: 55px; /* Borda superior esquerda arredondada */
-    border-bottom-right-radius: 55px; /* Borda superior direita arredondada */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    color: white;
-    background: rgba(97, 87, 87, 0.26);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5.5px);
-    -webkit-backdrop-filter: blur(5.5px);
-    border: 0.5px solid rgba(255, 255, 255, 0.205);
-    border-top: 0px;
-    align-items: flex-end;
-    padding-bottom: 1%;
-}
-.pj_title{
-    font-size: 80px;
-    width: 100%;
-    padding-left: 3%;
-    height:auto;
-    
-}
+
 
 /*##########################################################################################################*/
 
