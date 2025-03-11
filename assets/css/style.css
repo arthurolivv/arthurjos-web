@@ -103,18 +103,40 @@
     justify-content: center;
   }
 /*=====================================Home=================================*/
-.headerHome{
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1px 5px;
-    overflow: hidden; /* Evita que o ::before ultrapasse os limites */
-    background: linear-gradient(to top, rgb(0, 0, 0), rgb(10, 10, 10));
- 
+/* Estilo geral para a seção */
+.home {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding-top: 10%;
+  overflow: hidden;
+  background: linear-gradient(to top, rgb(0, 0, 0), rgb(10, 10, 10));
 }
+
+.home-title {
+  display: inline-flex; /* Garante que o título inteiro fique na mesma linha */
+  font-size: 2.5rem;
+  white-space: nowrap; /* Impede a quebra de linha dentro do título */
+  margin: 0;
+  align-items: center;
+  color: white;
+}
+
+.home-destaque {
+  color: #3498db; /* Cor de destaque */
+  font-weight: bold;
+  margin-left: 2%;
+}
+
+.home-subtitle {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.534);
+  margin-top: 0.5rem; 
+}
+
 @keyframes color{
   0%{
     filter: hue-rotate(0deg);
@@ -128,7 +150,6 @@
   height: 1px;
   width: 500px;
   position: relative;
-  top: 100px;
   margin-left: auto;
   margin-right: auto;
   background: rgba(255, 255, 255, 0.070);
@@ -163,8 +184,10 @@
   }
 }
 .home_tube{
-  position: relative;
-  top: 0px;
+  padding-top: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .home_tube::before{
   content: "";
@@ -177,6 +200,7 @@
   background: linear-gradient(to top, rgb(10, 10, 10), rgb(0, 0, 0));
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+  
 }
 .home_light::before {
   content: "";
@@ -199,134 +223,75 @@
     filter: blur(50px);
   }
 }
+/* Para a lista, remover os pontos de lista e garantir que o conteúdo seja centralizado */
+.social-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+  align-items: center;
+}
 
-.home_name{
-    text-align: center;
+/* Cada item da lista */
+.social-item {
+  display: inline-block;
 }
-.home_card{
-    text-align: center;
-    background-color: var(--container-color);
-    padding: 1rem 5rem;
-    border-radius: 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    text-align: center;
-    border: 1px solid gray;
-    margin: auto;
-    gap: 15px;
-    width: 100%;
+
+/* Estilo dos links */
+.home-social-link {
+  display: inline-flex; /* Flex para alinhar o ícone e o texto */
+  align-items: center;
+  justify-content: center; /* Centraliza o conteúdo */
+  width: 60px;
+  height: 60px;
+  margin: 0 5px;
+  background-color: white;
+  border-radius: 50px;
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  transition: width 0.3s ease-out;
+  padding: 0 10px; /* Garante que haja espaço para o texto quando expandir */
+  position: relative; /* Necessário para ajustar o texto */
 }
-.home-avatar-box {
-    background: rgba(211, 68, 255, 0.062); /* Cor semi-transparente */
-    height: 150px;
-    width: 150px;
-    border-radius: 100%;
-    margin: auto;
-    overflow: hidden;
-    backdrop-filter: blur(0.1px); /* Desfoque do fundo */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    border: 0.5px solid rgba(255, 255, 255, 0.05);
+
+/* Estilo do ícone */
+.home-social-link ion-icon {
+  font-size: 50px; /* Tamanho do ícone */
+  transition: font-size 0.3s ease-out;
 }
-.home-avatar-box img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
+
+/* O texto (span) será escondido por padrão */
+.home-social-link span {
+  display: none; /* Inicialmente esconde o texto */
+  margin-left: 10px;
+  color: white;
+  font-size: 16px;
 }
-            /*=====================================Home: Bkg=================================*/
-.bkg {
-    position: relative;
-    border-radius: 40px;
-    background-color: #191919;
-    border: 0.5px solid rgba(255, 255, 255, 0.05);
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center; /* Alinha verticalmente a imagem e o texto */
-    padding: 5px 20px;
-    gap: 10px;
-    font-size: 14px;
-    color: #ccc;
+
+/* Quando o link for expandido */
+.home-social-link:hover {
+  width: 200px; /* Expande o link ao passar o mouse */
+  justify-content: flex-start; /* Alinha o conteúdo à esquerda */
 }
-#bkg_1{
-    justify-content: center;
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 5px 10px;
-    padding-left: -1px;
+
+/* Exibe o texto ao passar o mouse */
+.home-social-link:hover span {
+  display: inline-block;
 }
-.bkg_txt{
-    flex-grow: 1;
-    text-align: center;
+
+.home-social-link:hover ion-icon {
+  font-size: 30px; /* Ajusta o tamanho do ícone */
+
 }
-            /*=====================================Home: Progress Bar=================================*/
-.active_bar {
-    flex: 1;
-    border-radius: 3px;
-    background-color: slateblue;
-    height: 5px;
+
+.home-social-link:hover {
+  background-color: #3498db; /* Altera a cor de fundo ao passar o mouse */
 }
-.inactive_bar {
-    flex: 1;
-    border-radius: 3px;
-    background-color: white;
-    height: 5px;
-}
-.progressBar {
-    width: 97%;
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    margin: auto;
-    gap: 3px;
-    cursor: pointer;
-}
-.group-icon {
-    width: 20px;
-    justify-content: left;
-    position: static;
-    height: 20px;
-}
-.progressBar_hover {
-    visibility: hidden;
-    position: absolute;
-    bottom: -45px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-    border-radius: 8px;
-    font-size: 16px;
-    white-space: nowrap; 
-    z-index: 1;
-    opacity: 0;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-.progressBar:hover .progressBar_hover {
-    visibility: visible; /* Torna visível a caixa de texto */
-    opacity: 1; /* Torna a caixa de texto opaca */
-}
-            /*=====================================Home: Buttons=================================*/
-.button{
-    display: inline-flex;
-    justify-content: center;
-    background-color: black;
-    color: var(--white-color);
-    font-weight: var(--font-semi-bold);
-    padding: 1.25rem 2.5rem;
-    border-radius: 4rem;
-    transition: background-color .4s;
-}
-.button:hover{
-    background-color: red;
-    cursor: pointer;
-}
-            /*=====================================Home: CV=================================*/
+
+
+/*=====================================Home: CV=================================*/
 #cv_hubV {
     position: relative;
     display: flex;
@@ -384,210 +349,6 @@
 .cv_options:hover {
     opacity: 1;
     visibility: visible;
-}
-            /*=====================================Home: ID's=================================*/
-#profile_card{
-    background: none;
-    border: none;
-    
-}
-#hubV_1{
-    margin-bottom: 20px;
-}
-#home_hubV{
-    margin-top: auto;
-    margin-bottom: auto;
-}
-/*=================================Contato=====================================*/
-.contato{
-    justify-content: center;
-    align-items: center;
-    display: flex;
-}
-#hubH_ct{
-    gap: 0.9%;
-}
-.ct_card {
-    width: 300px; /* Define um tamanho quadrado */
-    height: 300px;
-    background-color: #191919; /* Cor de fundo */
-    border-radius: 30px; /* Borda arredondada */
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Distribui os elementos: ícone no topo e texto no final */
-    align-items: flex-start; /* Alinha tudo à esquerda */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    color: white;
-    padding: 20px; /* Espaçamento interno */
-}
-.ct_card:hover {
-    transform: scale(1.05); /* Efeito de crescimento ao passar o mouse */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
-}
-.ct_icon {
-    width: 150px; /* Define o tamanho do ícone */
-    height: auto;
-}
-.ct_text {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Mantém o texto alinhado à esquerda */
-    margin-bottom: 10px; /* Dá um pequeno espaço no final */
-}
-.ct_redesocial {
-    font-size: 25px;
-    font-weight: bold;
-}
-.ct_arroba {
-    font-size: 20px;
-    color: #aaa; /* Cor mais suave para o @fixingx */
-}
-#ct_email{
-    width: 600px;
-    background: linear-gradient(145.57deg, #1D1D1D, #000000);
-    border: 0.5px solid rgba(255, 255, 255, 0.05);
-}
-#ct_github{
-    background: linear-gradient(145.57deg, #000000, #1D1D1D);
-    border: 0.5px solid rgba(255, 255, 255, 0.05);
-}
-#ct_linkedin{
-    background: linear-gradient(145.57deg, #3c75c6, #144589);
-    border: 0.5px solid rgba(255, 255, 255, 0.05);
-}
-#ct_instagram{
-    background: url('assets/img/bkg/instagram_bkg.png') center/cover no-repeat;
-    border: 0.5px solid rgba(255, 255, 255, 0.05);
-}   
-#ct_beecrowd{
-    background: linear-gradient(180deg, #ffffff, #7507a073);
-    border: 0.5px solid black;
-    
-}  
-#ct_codewars{
-    background: linear-gradient(180deg, #8f0303, #360202);
-    border: 0.5px solid black;
-}  
-#ct_icon_email{
-    width: 110px;
-    height: auto;
-}
-#ct_icon_github{
-    width: 100px;
-    height: auto;
-}
-#ct_icon_beecrowd{
-    padding-top: 10%;
-    width: 210px;
-    height: auto;
-    
-    
-}
-#ct_icon_codewars{
-    width: 100px;
-    height: auto;
-    
-}
-/*=================================Sobre Mim=====================================*/
-.sobremim{
-    justify-content: flex-end;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.sm_title{
-    font-size: 80px;
-    width: 80%;
-    padding-left: 3%;
-}
-.sm_text{
-    font-size: 22px;
-    width: 100%;
-    padding-left: 3%;
-}
-.sm_text p{
-    margin-bottom:5%;
-    justify-content: center;
-}
-.sm_subtitle{
-    font-size: 30px;
-    width: 80%;
-    padding-left: 3%;
-}
-.destaque{
-    color: rgb(7, 161, 2);
-    font-weight: bold; /* Negrito */
-}
-#sm_card{
-    width: 80%;
-    height: 80%;
-    border-top-left-radius: 55px; /* Borda superior esquerda arredondada */
-    border-top-right-radius: 55px; /* Borda superior direita arredondada */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    color: white;
-    padding:0% 1%;
-    background: rgba(97, 87, 87, 0.26);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5.5px);
-    -webkit-backdrop-filter: blur(5.5px);
-    border: 0.5px solid rgba(255, 255, 255, 0.205);
-    border-bottom: 0px;
-}
-#sm_subcard{
-    width: 50%;
-    height: 100%;
-    justify-content: flex-start;
-    padding: 3%;
-    gap: 5%;
-}
-.sm_line{
-    border: 1px solid rgba(255, 255, 255, 0.2); /* Linha muito fina com cor transparente */
-    width: 1px; /* Define a largura da linha */
-    height: 100%;
-    
-}
-#sm_skills {
-    display: flex;
-    align-items: center; 
-    gap: 10px; 
-}
-#sm_skills_v {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-.sm_skills_name {
-    text-align: left;
-}
-.sm_skills_bar {
-    width: 100%;
-    height: 10px;
-    background-color: #ddd;
-    border-radius: 5px;
-    position: relative;
-    overflow: hidden;
-}
-.sm_skills_percentage {
-    height: 100%;
-    background-color: #4CAF50;
-    border-radius: 5px;
-    animation: fillBars 2.5s 1;
-}
-.sm_skills_icon {
-    width: 50px; /* Ajuste conforme necessário */
-    height: auto;
-}
-@keyframes fillBars{
-    from{
-        width:0;
-    }
-    to{
-        width: 100%;
-    }
 }
 /*=================================Sobre Mim=====================================*/
 .projetos{
