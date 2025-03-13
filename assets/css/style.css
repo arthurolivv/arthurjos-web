@@ -105,16 +105,15 @@
 /*=====================================Home=================================*/
 /* Estilo geral para a seção */
 .home {
-  position: static;
   width: 100vw;
   height: 100vh;
   display: flex;
-  justify-content: space-between;
   flex-direction: column;
+  justify-content: center;
   overflow: hidden;
+  align-items: center;
   background: linear-gradient(to top, rgb(0, 0, 0), rgb(10, 10, 10));
 }
-
 
 .home-title {
   display: inline-flex; /* Garante que o título inteiro fique na mesma linha */
@@ -131,84 +130,6 @@
   margin-left: 2%;
 }
 
-.home-subtitle {
-  font-size: 1.5rem;
-  color: rgba(255, 255, 255, 0.534);
-  margin-top: 0.5rem; 
-}
-
-.home_light{
-  height: 0.5px;
-  position: relative;
-  margin-left: auto;
-  margin-right: auto;
-  background: rgba(255, 255, 255, 0.02);
-  perspective: 160px;
-  animation: acenderLampada 3s ease-in-out forwards;
-  
-}
-@keyframes acenderLampada {
-  0% {
-    box-shadow: 
-      0 0px 4px rgb(0, 0, 0), 
-      0 0px 40px rgba(0, 0, 0, 0.3), /* Começo suave */
-      0 20px 40px rgb(0, 0, 0);
-    opacity: 0; /* Começa com pouca opacidade */
-  }
-  50% {
-    box-shadow: 
-      0 0px 10px rgb(255, 255, 255), 
-      0 0px 80px rgba(255, 255, 255, 0.6), /* Aumentando o brilho */
-      0 20px 80px rgb(211, 211, 255);
-    opacity: 0.5; /* Aumenta a opacidade */
-  }
-  100% {
-    box-shadow: 
-      0 0px 20px rgb(255, 255, 255), 
-      0 0px 120px rgba(255, 255, 255, 0.9), /* Brilho intenso */
-      0 20px 120px rgb(211, 211, 255);
-    opacity: 1; /* Opacidade total */
-  }
-}
-
-.home_tube{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.home_tube::before{
-  content: "";
-  position: absolute;
-  height: 5.2vh;
-  top: -50px;
-  border-radius: 2px;
-  background: linear-gradient(to top, rgba(10, 10, 10, 0.3), rgb(0, 0, 0));
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  
-  
-}
-.home_light::before {
-  content: "";
-  position: absolute;
-  height: 250px;
-  width: 500px;
-  background: linear-gradient(to bottom, rgb(255, 255, 255), rgba(255, 255, 255, 0.534));
-  animation: acenderLuz 2s ease-in-out forwards; /* Animação de acender a luz */
-}
-@keyframes acenderLuz {
-  0% {
-    opacity: 0;
-    transform: translateY(-100px) scale(0.8) rotateX(50deg);
-    filter: blur(100px);
-  }
-  100% {
-    opacity: 0.11;
-    transform: translateY(0) scale(1.6) rotateX(50deg);
-    filter: blur(35px);
-  }
-}
-
 .container {
   width: 370px;
   padding-bottom: 64px;
@@ -221,17 +142,17 @@
   justify-content: center;
   align-items: center;
   gap: 32px;
-  display: inline-flex;
+  display: flex;
 }
 
 .image-container {
-  width: 370px;
-  height: 370px;
-  box-shadow: 0px 5px 5px rgba(255, 255, 255, 0.10) inset;
+  width: 360px;
+  height: 360px;
   overflow: hidden;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-  background-image: url(https://placehold.co/370x370);
+  background-image: url(../img/fotos/eu.png);
+  background-size: cover;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -252,81 +173,25 @@
   position: relative;
 }
 
-.location {
-  left: 23.50px;
-  top: 104px;
-  position: absolute;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  display: inline-flex;
-}
-
-.location-icon {
-  width: 24px;
-  height: 24px;
-  position: relative;
-}
-
-.location-circle {
-  width: 24px;
-  height: 24px;
-  left: 0px;
-  top: 0px;
-  position: absolute;
-}
-
-.inner-circle {
-  width: 6px;
-  height: 6px;
-  left: 9px;
-  top: 6.75px;
-  position: absolute;
-  outline: 2px #676767 solid;
-  outline-offset: -1px;
-}
-
-.triangle {
-  width: 15px;
-  height: 19.50px;
-  left: 4.50px;
-  top: 2.25px;
-  position: absolute;
-  outline: 2px #676767 solid;
-  outline-offset: -1px;
-}
-
-.location-text {
-  color: #676767;
-  font-size: 24px;
-  font-family: Poppins;
-  font-weight: 400;
-  word-wrap: break-word;
-}
-
 .name-position {
   width: 209px;
-  height: 100px;
-  left: 0px;
-  top: 0px;
-  position: absolute;
+  height: 140px;
+  position: relative;
+  display: flex;                  /* Ativa o modelo de layout flex */
+  flex-direction: column;         /* Alinha os itens verticalmente */
+  justify-content: center;        /* Centraliza os itens verticalmente */
+  align-items: center;            /* Centraliza os itens horizontalmente */
 }
 
 .name {
-  left: 9.50px;
-  top: 0px;
-  position: absolute;
   color: white;
   font-size: 40px;
   font-family: Poppins;
   font-weight: 600;
-  word-wrap: break-word;
+  white-space: nowrap;
 }
 
 .position {
-  left: 0px;
-  top: 64px;
-  position: absolute;
   color: #676767;
   font-size: 24px;
   font-family: Poppins;
@@ -568,9 +433,6 @@
     opacity: 1;
     visibility: visible;
 }
-
-
-/*##########################################################################################################*/
 
 /*=================================Reset=====================================*/
 
@@ -1671,44 +1533,6 @@ main {
 
 @media (min-width: 450px) {
 
-  .home{
-    padding-top: 10vh;
-    transition: width 0.25s ease, height 0.25s ease;
-  }
-  .home_light{
-    width: 65vw;
-    transition: width 0.25s ease, height 0.25s ease;
-  }
-  .home_light:before{
-    width: 70vw;
-    height: 30vh;
-    transition: width 0.25s ease, height 0.25s ease;
-  }
-  .home_tube{
-    padding-top: 25vh;
-    transition: width 0.25s ease, height 0.25s ease;
-  }
-  .home_tube::before{
-    width: 70vw;
-    transition: width 0.25s ease, height 0.25s ease;
-  }
-  .home-title{
-    display: contents;
-    font-size: 2rem;
-    transition: width 0.25s ease, height 0.25s ease;
-  }
-  .home-subtitle{
-    font-size: 1rem;
-    white-space: nowrap;
-    transition: width 0.25s ease, height 0.25s ease;
-  }
-  .home-social-link{
-    margin:0;
-  }
-  .home-seemore{
-    margin-top: 25vh;
-    transition: width 0.25s ease, height 0.25s ease;
-  }
           /**
      * client
      */
@@ -1748,43 +1572,7 @@ main {
   
 /*=================================RESPONSIVIDADE - maior que 580px - Home=====================================*/
 
-    .home{
-      padding-top: 12vh;
-      transition: width 0.25s ease, height 0.25s ease;
-    }
-    .home_light{
-      width: 70vw;
-      transition: width 0.25s ease, height 0.25s ease;
-    }
-    .home_light:before{
-      width: 70vw;
-      height: 50vw;
-      transition: width 0.25s ease, height 0.25s ease;
-    }
-    .home_tube{
-      padding-top: 25vh;
-      transition: width 0.25s ease, height 0.25s ease;
-    }
-    .home_tube::before{
-      width: 70vw;
-      transition: width 0.25s ease, height 0.25s ease;
-    }
-    .home-title{
-      font-size: 2.5rem;
-      white-space: nowrap;
-      transition: width 0.25s ease, height 0.25s ease;
-    }
-    .home-subtitle{
-      font-size: 1rem;
-      transition: width 0.25s ease, height 0.25s ease;
-    }
-    .home-social-link{
-      margin:0;
-    }
-    .home-seemore{
-      margin-top: 15vh;
-      transition: width 0.25s ease, height 0.25s ease;
-    }
+  
 
 /*=================================RESPONSIVIDADE - maior que 580px - Reutilizáveis=====================================*/
 
@@ -2017,46 +1805,6 @@ main {
 
   @media (min-width: 768px) {
 
-    .home{
-      padding-top: 12vh;
-      transition: width 0.25s ease, height 0.25s ease;
-    }
-    .home_light{
-      width: 60vw;
-      transition: width 0.25s ease, height 0.25s ease;
-    }
-    .home_light:before{
-      width: 60vw;
-      height: 35vh;
-      transition: width 0.25s ease, height 0.25s ease;
-    }
-    .home_tube{
-      padding-top: 32vh;
-      transition: width 0.25s ease, height 0.25s ease;
-    }
-    .home_tube::before{
-      width: 60vw;
-      transition: width 0.25s ease, height 0.25s ease;
-    }
-    .home-title{
-      display: flex;
-      white-space: nowrap;
-      font-size: 3rem;
-      transition: width 0.25s ease, height 0.25s ease;
-    }
-    .home-subtitle{
-      font-size: 1.5rem;
-      white-space: nowrap;
-      transition: width 0.25s ease, height 0.25s ease;
-    }
-    .home-social-link{
-      margin:0;
-    }
-    .home-seemore{
-      margin-top: 15vh;
-      transition: width 0.25s ease, height 0.25s ease;
-    }
-
 /*=================================RESPONSIVIDADE - maior que 768px - Reutilizaveis=====================================*/
   
 .sidebar, article { width: 700px; }
@@ -2144,42 +1892,6 @@ main {
 
 /*=================================RESPONSIVIDADE - maior que 1024px - home=====================================*/
 
-      .home{
-        padding-top: 15vh;
-        transition: width 0.25s ease, height 0.25s ease;
-      }
-      .home_light{
-        width: 45vw;
-        transition: width 0.25s ease, height 0.25s ease;
-      }
-      .home_light:before{
-        width: 45vw;
-        height: 30vh;
-        transition: width 0.25s ease, height 0.25s ease;
-      }
-      .home_tube{
-        padding-top: 25vh;
-        transition: width 0.25s ease, height 0.25s ease;
-      }
-      .home_tube::before{
-        width: 45vw;
-        transition: width 0.25s ease, height 0.25s ease;
-      }
-      .home-title{
-        
-        font-size: 3rem;
-        transition: width 0.25s ease, height 0.25s ease;
-      }
-      .home-subtitle{
-        font-size: 1.5rem;
-        white-space: nowrap;
-        transition: width 0.25s ease, height 0.25s ease;
-      }
-      
-      .home-seemore{
-        margin-top: 25vh;
-        transition: width 0.25s ease, height 0.25s ease;
-      }
 
 /*=================================RESPONSIVIDADE - maior que 1024px - Reutilizaveis=====================================*/
 
