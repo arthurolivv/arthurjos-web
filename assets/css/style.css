@@ -105,15 +105,13 @@
 /*=====================================Home=================================*/
 /* Estilo geral para a seção */
 .home {
-  position: relative;
   width: 100vw;
   height: 100vh;
-  align-items: center;
   display: flex;
-  justify-content: space-between;
   flex-direction: column;
-  padding-top: 10%;
+  justify-content: center;
   overflow: hidden;
+  align-items: center;
   background: linear-gradient(to top, rgb(0, 0, 0), rgb(10, 10, 10));
   padding-bottom: 50vh;
 }
@@ -133,100 +131,132 @@
   margin-left: 2%;
 }
 
-.home-subtitle {
-  font-size: 1.5rem;
-  color: rgba(255, 255, 255, 0.534);
-  margin-top: 0.5rem; 
-}
-
-@keyframes color{
-  0%{
-    filter: hue-rotate(0deg);
-  }
-  100%{
-    filter: hue-rotate(360deg);
-  }
-}
-
-.home_light{
-  height: 1px;
-  width: 500px;
-  position: relative;
-  margin-left: auto;
-  margin-right: auto;
-  background: rgba(255, 255, 255, 0.070);
-  perspective: 160px;
-  box-shadow: 
-            0 0px 4px rgb(255, 255, 255),
-            0 0px 40px rgba(255, 255, 255,0719),
-            0 20px 40px rgb(211, 211, 255);
-  animation: acenderLampada 2s ease-in-out forwards;
-  
-}
-@keyframes acenderLampada {
-  0% {
-    box-shadow: 
-      0 0px 4px rgb(255, 255, 255), 
-      0 0px 40px rgba(255, 255, 255, 0.3), /* Começo suave */
-      0 20px 40px rgb(211, 211, 255);
-    opacity: 0; /* Começa com pouca opacidade */
-  }
-  50% {
-    box-shadow: 
-      0 0px 10px rgb(255, 255, 255), 
-      0 0px 80px rgba(255, 255, 255, 0.6), /* Aumentando o brilho */
-      0 20px 80px rgb(211, 211, 255);
-    opacity: 0.5; /* Aumenta a opacidade */
-  }
-  100% {
-    box-shadow: 
-      0 0px 20px rgb(255, 255, 255), 
-      0 0px 120px rgba(255, 255, 255, 0.9), /* Brilho intenso */
-      0 20px 120px rgb(211, 211, 255);
-    opacity: 1; /* Opacidade total */
-  }
-}
-.home_tube{
-  padding-top: 20%;
-  display: flex;
+.container {
+  width: 370px;
+  padding-bottom: 64px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background: #0A0A0A;
+  box-shadow: 0px 5px 5px rgba(255, 255, 255, 0.10) inset;
+  border-radius: 20px;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+  gap: 32px;
+  display: flex;
 }
-.home_tube::before{
-  content: "";
+
+.image-container {
+  width: 360px;
+  height: 360px;
+  overflow: hidden;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  background-image: url(../img/fotos/eu.png);
+  background-size: cover;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  display: flex;
+}
+
+.gradient-overlay {
+  align-self: stretch;
+  flex: 1 1 0;
+  position: relative;
+  background: linear-gradient(180deg, rgba(10, 10, 10, 0) 68%, #0A0A0A 96%);
+}
+
+.info-container {
+  width: 209px;
+  height: 140px;
+  position: relative;
+}
+
+.name-position {
+  width: 209px;
+  height: 140px;
+  position: relative;
+  display: flex;                  /* Ativa o modelo de layout flex */
+  flex-direction: column;         /* Alinha os itens verticalmente */
+  justify-content: center;        /* Centraliza os itens verticalmente */
+  align-items: center;            /* Centraliza os itens horizontalmente */
+}
+
+.name {
+  color: white;
+  font-size: 40px;
+  font-family: Poppins;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.position {
+  color: #676767;
+  font-size: 24px;
+  font-family: Poppins;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.contact-container {
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  background: white;
+  box-shadow: 0px 5px 5px rgba(10, 10, 10, 0.10) inset;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  display: inline-flex;
+}
+
+.contact-icon {
+  width: 24px;
+  height: 24px;
+  position: relative;
+}
+
+.contact-circle {
+  width: 24px;
+  height: 24px;
+  left: 0px;
+  top: 0px;
   position: absolute;
-  height: 50px;
-  width: 510px;
-  top: -50px;
-  left: -5px;
-  border-radius: 2px;
-  background: linear-gradient(to top, rgb(10, 10, 10), rgb(0, 0, 0));
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  
-  
 }
-.home_light::before {
-  content: "";
+
+.contact-box-top {
+  width: 18px;
+  height: 13.50px;
+  left: 3px;
+  top: 5.25px;
   position: absolute;
-  height: 250px;
-  width: 500px;
-  background: linear-gradient(to bottom, rgb(255, 255, 255), rgba(255, 255, 255, 0.534));
-  opacity: 0.2;
-  animation: acenderLuz 2s ease-in-out forwards; /* Animação de acender a luz */
+  outline: 2px black solid;
+  outline-offset: -1px;
 }
-@keyframes acenderLuz {
-  0% {
-    opacity: 0;
-    transform: scale(0.8) rotateX(50deg);
-    filter: blur(100px);
-  }
-  100% {
-    opacity: 0.2;
-    transform: scale(1.4) rotateX(50deg);
-    filter: blur(50px);
-  }
+
+.contact-box-bottom {
+  width: 18px;
+  height: 8.25px;
+  left: 3px;
+  top: 5.25px;
+  position: absolute;
+  outline: 2px black solid;
+  outline-offset: -1px;
 }
+
+.contact-text {
+  color: #0A0A0A;
+  font-size: 16px;
+  font-family: Poppins;
+  font-weight: 600;
+  word-wrap: break-word;
+}
+
+
 
 #home-social-list{
   margin:5%;
@@ -248,6 +278,7 @@
   transition: width 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Animação de expansão */
   padding: 0 10px; /* Garante que haja espaço para o texto quando expandir */
   position: relative; /* Necessário para ajustar o texto */
+  
 }
 
 /* Estilo do ícone */
@@ -270,6 +301,7 @@
   justify-content: flex-start; /* Alinha o conteúdo à esquerda */
   background-color: black; /* Altera a cor de fundo ao passar o mouse */
   border: 0.5px solid rgba(255, 255, 255, 0.247);
+  
 }
 
 #home-cv-icon:hover{
@@ -307,6 +339,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  overflow: hidden;
 }
 .home-seemore:hover{
   color: #3498db;
@@ -401,9 +434,6 @@
     opacity: 1;
     visibility: visible;
 }
-
-
-/*##########################################################################################################*/
 
 /*=================================Reset=====================================*/
 
@@ -1479,7 +1509,7 @@ main {
     margin:0;
   }
   .home-seemore{
-    margin-top: 20vh;
+    margin-top: 15vh;
     font-size: 1rem;
     transition: width 0.25s ease, height 0.25s ease;
   }
@@ -1504,44 +1534,6 @@ main {
 
 @media (min-width: 450px) {
 
-  .home{
-    padding-top: 10vh;
-    transition: width 0.25s ease, height 0.25s ease;
-  }
-  .home_light{
-    width: 65vw;
-    transition: width 0.25s ease, height 0.25s ease;
-  }
-  .home_light:before{
-    width: 70vw;
-    height: 30vh;
-    transition: width 0.25s ease, height 0.25s ease;
-  }
-  .home_tube{
-    padding-top: 25vh;
-    transition: width 0.25s ease, height 0.25s ease;
-  }
-  .home_tube::before{
-    width: 70vw;
-    transition: width 0.25s ease, height 0.25s ease;
-  }
-  .home-title{
-    display: contents;
-    font-size: 2rem;
-    transition: width 0.25s ease, height 0.25s ease;
-  }
-  .home-subtitle{
-    font-size: 1rem;
-    white-space: nowrap;
-    transition: width 0.25s ease, height 0.25s ease;
-  }
-  .home-social-link{
-    margin:0;
-  }
-  .home-seemore{
-    margin-top: 15vh;
-    transition: width 0.25s ease, height 0.25s ease;
-  }
           /**
      * client
      */
@@ -1581,43 +1573,7 @@ main {
   
 /*=================================RESPONSIVIDADE - maior que 580px - Home=====================================*/
 
-    .home{
-      padding-top: 12vh;
-      transition: width 0.25s ease, height 0.25s ease;
-    }
-    .home_light{
-      width: 70vw;
-      transition: width 0.25s ease, height 0.25s ease;
-    }
-    .home_light:before{
-      width: 70vw;
-      height: 50vw;
-      transition: width 0.25s ease, height 0.25s ease;
-    }
-    .home_tube{
-      padding-top: 25vh;
-      transition: width 0.25s ease, height 0.25s ease;
-    }
-    .home_tube::before{
-      width: 70vw;
-      transition: width 0.25s ease, height 0.25s ease;
-    }
-    .home-title{
-      font-size: 2.5rem;
-      white-space: nowrap;
-      transition: width 0.25s ease, height 0.25s ease;
-    }
-    .home-subtitle{
-      font-size: 1rem;
-      transition: width 0.25s ease, height 0.25s ease;
-    }
-    .home-social-link{
-      margin:0;
-    }
-    .home-seemore{
-      margin-top: 15vh;
-      transition: width 0.25s ease, height 0.25s ease;
-    }
+  
 
 /*=================================RESPONSIVIDADE - maior que 580px - Reutilizáveis=====================================*/
 
@@ -1850,46 +1806,6 @@ main {
 
   @media (min-width: 768px) {
 
-    .home{
-      padding-top: 12vh;
-      transition: width 0.25s ease, height 0.25s ease;
-    }
-    .home_light{
-      width: 60vw;
-      transition: width 0.25s ease, height 0.25s ease;
-    }
-    .home_light:before{
-      width: 60vw;
-      height: 35vh;
-      transition: width 0.25s ease, height 0.25s ease;
-    }
-    .home_tube{
-      padding-top: 32vh;
-      transition: width 0.25s ease, height 0.25s ease;
-    }
-    .home_tube::before{
-      width: 60vw;
-      transition: width 0.25s ease, height 0.25s ease;
-    }
-    .home-title{
-      display: flex;
-      white-space: nowrap;
-      font-size: 3rem;
-      transition: width 0.25s ease, height 0.25s ease;
-    }
-    .home-subtitle{
-      font-size: 1.5rem;
-      white-space: nowrap;
-      transition: width 0.25s ease, height 0.25s ease;
-    }
-    .home-social-link{
-      margin:0;
-    }
-    .home-seemore{
-      margin-top: 15vh;
-      transition: width 0.25s ease, height 0.25s ease;
-    }
-
 /*=================================RESPONSIVIDADE - maior que 768px - Reutilizaveis=====================================*/
   
 .sidebar, article { width: 700px; }
@@ -1977,44 +1893,6 @@ main {
 
 /*=================================RESPONSIVIDADE - maior que 1024px - home=====================================*/
 
-      .home{
-        padding-top: 15vh;
-        transition: width 0.25s ease, height 0.25s ease;
-      }
-      .home_light{
-        width: 50vw;
-        transition: width 0.25s ease, height 0.25s ease;
-      }
-      .home_light:before{
-        width: 50vw;
-        height: 30vh;
-        transition: width 0.25s ease, height 0.25s ease;
-      }
-      .home_tube{
-        padding-top: 25vh;
-        transition: width 0.25s ease, height 0.25s ease;
-      }
-      .home_tube::before{
-        width: 50vw;
-        transition: width 0.25s ease, height 0.25s ease;
-      }
-      .home-title{
-        
-        font-size: 3rem;
-        transition: width 0.25s ease, height 0.25s ease;
-      }
-      .home-subtitle{
-        font-size: 1.5rem;
-        white-space: nowrap;
-        transition: width 0.25s ease, height 0.25s ease;
-      }
-      .home-social-link{
-        margin:0;
-      }
-      .home-seemore{
-        margin-top: 10vh;
-        transition: width 0.25s ease, height 0.25s ease;
-      }
 
 /*=================================RESPONSIVIDADE - maior que 1024px - Reutilizaveis=====================================*/
 
