@@ -53,8 +53,6 @@ for (let i = 0; i < testimonialsItem.length; i++) {
 modalCloseBtn.addEventListener("click", testimonialsModalFunc);
 overlay.addEventListener("click", testimonialsModalFunc);
 
-
-
 // custom select variables
 const select = document.querySelector("[data-select]");
 const selectItems = document.querySelectorAll("[data-select-item]");
@@ -114,7 +112,6 @@ for (let i = 0; i < filterBtn.length; i++) {
 }
 
 
-
 // contact form variables
 const form = document.querySelector("[data-form]");
 const formInputs = document.querySelectorAll("[data-form-input]");
@@ -136,24 +133,28 @@ for (let i = 0; i < formInputs.length; i++) {
 
 
 
-// page navigation variables
+// navbar variables
 const navigationLinks = document.querySelectorAll("[data-nav-link]");
 const pages = document.querySelectorAll("[data-page]");
 
 // add event to all nav link
-for (let i = 0; i < navigationLinks.length; i++) {
-  navigationLinks[i].addEventListener("click", function () {
+navigationLinks.forEach(link => {
+  link.addEventListener("click", function (event) {
+    event.preventDefault(); // Impede a navegação padrão (e.g., redirecionamento)
 
-    for (let i = 0; i < pages.length; i++) {
-      if (this.innerHTML.toLowerCase() === pages[i].dataset.page) {
-        pages[i].classList.add("active");
-        navigationLinks[i].classList.add("active");
-        window.scrollTo(0, 0);
+    // Remover a classe 'active' de todos os itens e adicionar novamente no item clicado
+    navigationLinks.forEach(link => link.classList.remove("active"));
+    link.classList.add("active");
+
+    // Navegação para a seção correspondente
+    const targetPage = link.textContent.toLowerCase(); // Obtém o nome da seção (e.g., "about", "resume")
+    pages.forEach(page => {
+      if (page.dataset.page === targetPage) {
+        page.classList.add("active"); // Torna a seção visível
+        page.scrollIntoView({ behavior: "smooth" }); // Rola suavemente até a seção
       } else {
-        pages[i].classList.remove("active");
-        navigationLinks[i].classList.remove("active");
+        page.classList.remove("active"); // Esconde as outras seções
       }
-    }
-
+    });
   });
-}
+});
