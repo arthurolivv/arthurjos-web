@@ -167,8 +167,6 @@
   -webkit-backdrop-filter: blur(5.1px);
   padding-left: 10px;
   padding-right: 10px;
-  
-  
 }
 
 .image-container {
@@ -185,6 +183,7 @@
   align-items: center;
   gap: 10px;
   display: flex;
+  background-position: center;
 }
 
 .gradient-overlay {
