@@ -141,14 +141,14 @@
 
 .container {
   width: 370px;
-  padding-bottom: 64px;
+  padding-bottom: 45px;
   background: linear-gradient(to top, #0A0A0A 55%, rgba(0,0,0,0.1) 50%);
   box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.10) inset;
   border-radius: 20px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 32px;
+  gap: 15px;
   display: flex;
   margin: 0 auto;
 }
@@ -226,24 +226,57 @@
   word-wrap: break-word;
 }
 
-.contact-container {
+.social-container {
   padding-left: 24px;
   padding-right: 24px;
-  padding-top: 16px;
-  padding-bottom: 16px;
-  background: white;
+  padding-bottom: 15px;
   box-shadow: 0px 5px 5px rgba(10, 10, 10, 0.10) inset;
-  border-radius: 10px;
+  border-radius: 20px;
   justify-content: center;
   align-items: center;
-  gap: 8px;
+  gap: 25px;
   display: inline-flex;
 }
 
-.contact-icon {
-  width: 24px;
-  height: 24px;
-  position: relative;
+.social-icon{
+  font-size: 45px;
+  color:  white;  
+}
+
+.social-icon:hover{
+  font-size: 50px;
+  color:  gray;
+  cursor: pointer;
+  transition: font-size 0.3s ease-in-out;
+}
+
+.contact-container {
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  background: white;
+  box-shadow: 0px 5px 5px rgba(10, 10, 10, 0.10) inset;
+  border-radius: 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  display: flex;
+  border: 0.5px solid black;
+  font-weight: 600;
+}
+
+.contact-container:hover {
+  background:black;
+  border-color: rgba(255,255,255,0.2);
+  color: white;
+  transition: background-color 0.1s ease;
+  cursor: pointer;
+  
+}
+
+.cv-icon{
+  font-size: 25px;
 }
 
 .contact-circle {
