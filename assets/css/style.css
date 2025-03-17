@@ -453,8 +453,10 @@
 
 .sidebar,
 article {
-  background: var(--eerie-black-2);
-  border: 1px solid var(--jet);
+  background: rgba(124, 124, 124, 0.14);
+  -webkit-backdrop-filter: blur(5.1px);
+  backdrop-filter: blur(2.1px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 20px;
   padding: 15px;
   box-shadow: var(--shadow-1);
