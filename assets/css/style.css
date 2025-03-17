@@ -547,7 +547,7 @@ article.active {
 }
 
 .has-scrollbar::-webkit-scrollbar-track {
-  background: var(--onyx);
+  background: var(red);
   border-radius: 5px;
 }
 
@@ -1034,6 +1034,12 @@ main {
 .timeline-item:not(:last-child) { margin-bottom: 20px; }
 
 .timeline-item-title {
+  font-size: var(--fs-4);
+  line-height: 1.3;
+  margin-bottom: 7px;
+}
+
+.timeline-item-subtitle {
   font-size: var(--fs-6);
   line-height: 1.3;
   margin-bottom: 7px;
@@ -1071,6 +1077,15 @@ main {
   color: var(--light-gray);
   font-weight: var(--fw-300);
   line-height: 1.6;
+}
+
+.certificados { margin-bottom: 30px; }
+
+.certificados .title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
 }
 
 /*=================================Resume - Skills=====================================*/
