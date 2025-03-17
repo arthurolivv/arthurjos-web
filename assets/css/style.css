@@ -2040,5 +2040,10 @@ main {
 /*=================================RESPONSIVIDADE - maior que 1250px - Resume=====================================*/
 
     .timeline-text { max-width: 700px; }
+
+    textarea.form-input { 
+      height: 350px;
+      max-height: 350px;
+     }
   
   }
