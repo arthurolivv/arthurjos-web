@@ -1988,8 +1988,8 @@ article { min-height: 100%; }
   width: 100%;
   height: unset;
   justify-items: center;
-  padding-top: 10px;
-  padding-bottom: 13px;
+  padding-top: 1.55vh;
+  padding-bottom: 2.01vh;
 }
 
 .name-position{
@@ -2013,11 +2013,11 @@ article { min-height: 100%; }
 }
 
 .contact-container{
-  padding: 8px 25px 8px 25px;
+  padding: 1.23vh 1.9vw 1.23vh 1.9vw;
 }
 
 .cv-icon{
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 
 .contact-seemore-out{
@@ -2027,7 +2027,7 @@ article { min-height: 100%; }
 
 .contact-seemore-out:hover{
   bottom: 0;
-  font-size: 12px;
+  font-size: 0.75rem;
 }
 /*=================================RESPONSIVIDADE - maior que 1250px - Main=====================================*/
 
