@@ -546,21 +546,28 @@ article.active {
 }
 
 .has-scrollbar::-webkit-scrollbar {
-  width: 5px; /* for vertical scrollbar */
-  height: 5px; /* for horizontal scrollbar */
+  width: 5px; /* For vertical scrollbar */
+  height: 5px; /* For horizontal scrollbar */
 }
 
 .has-scrollbar::-webkit-scrollbar-track {
-  background: var(red);
+  background:rgba(255,255,255,0.1); /* Light gray background for track */
   border-radius: 5px;
 }
 
 .has-scrollbar::-webkit-scrollbar-thumb {
-  background: var(--orange-yellow-crayola);
+  background: var(--orange-yellow-crayola); /* Custom color */
   border-radius: 5px;
 }
 
-.has-scrollbar::-webkit-scrollbar-button { width: 20px; }
+.has-scrollbar::-webkit-scrollbar-button {
+  width: 20px;
+}
+
+/* Optionally, add custom color for scrollbar thumb (handle) on hover */
+.has-scrollbar::-webkit-scrollbar-thumb:hover {
+  cursor: pointer;
+}
 
 .content-card {
   position: relative;
@@ -719,7 +726,7 @@ main {
   
   .social-item .social-link {
     color: var(--light-gray-70);
-    font-size: 18px;
+    font-size: 28px;
   }
   
   
@@ -1226,6 +1233,84 @@ main {
   height: 100%;
   border-radius: inherit;
 }
+
+/*=================================Resume - Certificados=====================================*/
+
+
+.certificados {
+  margin-bottom: 30px;
+}
+
+.certificados-title {
+  margin-bottom: 20px;
+}
+
+.certificados-list {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 15px;
+  margin: 0 -15px;
+  padding: 25px 15px;
+  padding-bottom: 35px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  overscroll-behavior-inline: contain;
+  scroll-snap-type: inline mandatory;
+  -webkit-overflow-scrolling: touch; /* For better scrolling on iOS */
+}
+
+.certificados-item {
+  position: relative;
+  width: 300px; /* Fixed width for each item */
+  height: auto;
+  flex-shrink: 0; /* Prevent items from shrinking */
+  border: 1px solid rgba(255, 255, 255, 0.1) ;
+  border-radius: 20px;
+}
+
+.certificado-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden; /* Keeps images contained */
+  border-radius: 20px;
+}
+
+.certificado-image-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.certificado-image-wrapper .certificado-info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  padding: 15px;
+  text-align: center;
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease-in-out;
+  width: 90%; /* Adjust as needed */
+}
+
+.certificados-item:hover{
+  cursor: pointer;
+}
+
+.certificados-item:hover .certificado-image-wrapper .certificado-info {
+  opacity: 1; /* Show text content on hover */
+}
+
+.certificados-item:hover .certificado-image-wrapper img {
+  opacity: 0.05; /* Fade image slightly when text appears */
+
+  
+}
+
 
 /*=================================Portfolio=====================================*/
 
