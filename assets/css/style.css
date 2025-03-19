@@ -931,6 +931,8 @@ main {
   line-height: 1.6;
 }
 
+/*=================================Resume - Certificados=====================================*/
+
 .certificados { margin-bottom: 30px; }
 
 .certificados .title-wrapper {
@@ -939,8 +941,6 @@ main {
   gap: 15px;
   margin-bottom: 25px;
 }
-
-/*=================================Resume - Certificados=====================================*/
 
 
 .certificados {
@@ -966,21 +966,39 @@ main {
   -webkit-overflow-scrolling: touch; /* For better scrolling on iOS */
 }
 
+.certificados-list::-webkit-scrollbar {
+  height: 8px; /* Tamanho da barra de rolagem */
+}
+
+.certificados-list::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.5); /* Cor da barra */
+  border-radius: 4px;
+}
+
+.certificados-list::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1); /* Cor do fundo */
+}
+
 .certificados-item {
-  position: relative;
-  width: 300px; /* Fixed width for each item */
+  flex: 0 0 auto; /* Impede que os itens sejam reduzidos */
+  width: 300px; /* Tamanho fixo */
   height: auto;
-  flex-shrink: 0; /* Prevent items from shrinking */
-  border: 1px solid rgba(255, 255, 255, 0.1) ;
-  border-radius: 20px;
+  scroll-snap-align: start; /* Faz o snap correto ao rolar */
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+.certificados-item:hover {
+  transform: scale(1.05); /* Efeito de leve zoom */
 }
 
 .certificado-image-wrapper {
   position: relative;
   width: 100%;
   height: auto;
-  overflow: hidden; /* Keeps images contained */
-  border-radius: 20px;
+  overflow: hidden;
+  border-radius: 16px;
 }
 
 .certificado-image-wrapper img {
@@ -988,34 +1006,15 @@ main {
   height: auto;
   display: block;
   transition: opacity 0.3s ease-in-out;
+  padding: 0;
+  border-radius: 16px;
 }
 
-.certificado-image-wrapper .certificado-info {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  padding: 15px;
-  text-align: center;
-  opacity: 0; /* Initially hidden */
-  transition: opacity 0.3s ease-in-out;
-  width: 90%; /* Adjust as needed */
+.certificado-info {
+  display: none; /* Esconde o texto */
 }
 
-.certificados-item:hover{
-  cursor: pointer;
-}
 
-.certificados-item:hover .certificado-image-wrapper .certificado-info {
-  opacity: 1; /* Show text content on hover */
-}
-
-.certificados-item:hover .certificado-image-wrapper img {
-  opacity: 0.05; /* Fade image slightly when text appears */
-
-  
-}
 
 
 /*=================================Resume - Skills=====================================*/
@@ -1154,11 +1153,12 @@ main {
   transition: var(--transition-1);
 }
 
-.project-item > a:hover .project-img::before { background: hsla(0, 0%, 0%, 0.5); }
+.project-item > a:hover .project-img::before { 
+  background: hsla(0, 0%, 0%, 0.5); 
+}
 
 .project-item-icon-box {
   --scale: 0.8;
-
   background: var(--jet);
   color: var(--orange-yellow-crayola);
   position: absolute;
@@ -1206,7 +1206,7 @@ main {
   font-weight: var(--fw-300);
 }
 
-/*=================================Blog=====================================*/
+/*=================================Posts=====================================*/
 
 .blog-posts { margin-bottom: 10px; }
 
