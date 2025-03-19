@@ -349,68 +349,6 @@
   transform: scale(1.1);
 }
 
-
-
-/*=====================================Home: CV=================================*/
-#cv_hubV {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centraliza os elementos */
-    padding-top: 5%;
-}
-
-.cv_button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-.cv_options {
-    border: 0.5px solid rgba(255, 255, 255, 0.05);
-    width: fit-content;
-    min-width: 150px;
-    position: absolute;
-    top: 22%; /* Alinha a caixa abaixo do botão */
-    left: 80%;
-    transform: translateX(-50%);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    background-color: #191919;
-    border-radius: 4px;
-    text-align: center;
-    
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-.cv_option {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-    padding: 8px 16px;
-    text-decoration: none;
-    color: white;
-    transition: background-color 0.3s ease;
-}
-.cv_option:hover {
-    background-color: #333;
-    border-radius: 4px;
-}
-.cv_icon {
-    width: 20px;
-    height: auto;
-}
-/* Efeito hover: Mostra as opções apenas quando o mouse está sobre o botão */
-.cv_button:hover + .cv_options,
-.cv_options:hover {
-    opacity: 1;
-    visibility: visible;
-}
-
 /*=================================Reset=====================================*/
 
 *, *::before, *::after {
