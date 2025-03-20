@@ -116,3 +116,15 @@ navigationLinks.forEach(link => {
     });
   });
 });
+
+//popup box cv
+const opnbtn = document.getElementById("open-modal");
+const clsbtn = document.getElementById("close-modal");
+const modal = document.getElementById("cv-modal");
+
+opnbtn.addEventListener("click",() =>{
+    modal.classList.add("open");
+});
+clsbtn.addEventListener("click",() =>{
+    modal.classList.remove("open");
+});
