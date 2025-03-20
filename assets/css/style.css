@@ -804,13 +804,12 @@ main {
 }
 
 .item span{
-  visibility: hidden;
-  opacity: 0;
+  
+  color: white;
 }
 
   .item:hover span{
-    visibility: visible;
-    opacity: 1;
+    
     transition: opacity 1s ease-in-out;
     color: white;
   }
@@ -1823,6 +1822,18 @@ main { margin-bottom: 60px; }
     width: max-content;
     margin: auto;
   }
+
+  .item span{
+    visibility: hidden;
+    opacity: 0;
+  }
+  
+    .item:hover span{
+      visibility: visible;
+      opacity: 1;
+      transition: opacity 1s ease-in-out;
+      color: white;
+    }
   
 /*=================================RESPONSIVIDADE - maior que 1024px - Navbar=====================================*/
 
