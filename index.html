@@ -417,8 +417,12 @@
                         </div>
                         <img src="assets/img/certificados/teste.png" alt="Certificado">
                       </figure>
+
+                      <h3 class="certificados-title">Finance</h3>
+                      <p class="certificados-org">Web development</p>
                     </a>
-                  </li>                         
+                  </li> 
+                                          
                                                        
                 </ul>
               </section>
@@ -638,16 +642,24 @@
       
                 <h3 class="h3 form-title">Formulário de Contato</h3>
       
-                <form action="#" class="form" data-form>
+                <form action="https://formsubmit.co/art.jacintho14@gmail.com" method="POST" class="form" data-form>
       
                   <div class="input-wrapper">
-                    <input type="text" name="fullname" class="form-input" placeholder="Nome Completo" required data-form-input>
+                    <input type="text" name="name" required class="form-input" placeholder="Nome Completo" required data-form-input>
       
-                    <input type="email" name="email" class="form-input" placeholder="E-mail" required data-form-input>
+                    <input  type="email" name="email" required class="form-input" placeholder="E-mail" required data-form-input>
+
                   </div>
-      
+
+                  <input id="subject-form" type="text" name="_subject" class="form-input" placeholder="Assunto" required></input>
+
                   <textarea name="message" class="form-input" placeholder="Mensagem" required data-form-input></textarea>
-      
+                  
+                  <input type="hidden" name="_captcha" value="false">
+
+                  <!-- encaminhar usuraio para outra pagina  -->
+                  <input type="hidden" name="_next" value=""> 
+
                   <button class="form-btn" type="submit" disabled data-form-btn>
                     <ion-icon name="send"></ion-icon>
                     <span>Enviar Mensagem</span>
