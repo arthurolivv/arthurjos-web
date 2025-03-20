@@ -953,66 +953,66 @@ main {
 
 .certificados-list {
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 15px;
-  margin: 0 -15px;
-  padding: 25px 15px;
-  padding-bottom: 35px;
   overflow-x: auto;
-  scroll-behavior: smooth;
-  overscroll-behavior-inline: contain;
-  scroll-snap-type: inline mandatory;
-  -webkit-overflow-scrolling: touch; /* For better scrolling on iOS */
-}
-
-.certificados-list::-webkit-scrollbar {
-  height: 8px; /* Tamanho da barra de rolagem */
-}
-
-.certificados-list::-webkit-scrollbar-thumb {
-  background-color: rgba(255, 255, 255, 0.5); /* Cor da barra */
-  border-radius: 4px;
-}
-
-.certificados-list::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.1); /* Cor do fundo */
+  gap: 15px;
+  width: 100%;
+  padding: 20px;
+  scroll-snap-type: x mandatory;
 }
 
 .certificados-item {
-  flex: 0 0 auto; /* Impede que os itens sejam reduzidos */
-  width: 300px; /* Tamanho fixo */
-  height: auto;
-  scroll-snap-align: start; /* Faz o snap correto ao rolar */
+  flex: 0 0 auto;
+  width: 200px;
+  scroll-snap-align: start;
   border-radius: 16px;
   overflow: hidden;
   transition: transform 0.3s ease-in-out;
 }
 
 .certificados-item:hover {
-  transform: scale(1.05); /* Efeito de leve zoom */
+  transform: scale(1.05);
 }
 
 .certificado-image-wrapper {
   position: relative;
   width: 100%;
-  height: auto;
   overflow: hidden;
   border-radius: 16px;
 }
 
 .certificado-image-wrapper img {
   width: 100%;
-  height: auto;
   display: block;
-  transition: opacity 0.3s ease-in-out;
-  padding: 0;
-  border-radius: 16px;
+  transition: var(--transition-1);
 }
 
-.certificado-info {
-  display: none; /* Esconde o texto */
+.certificado-item-icon-box {
+  --scale: 0.8;
+  background: var(--jet);
+  color: var(--orange-yellow-crayola);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(var(--scale));
+  font-size: 20px;
+  padding: 15px;
+  border-radius: 12px;
+  opacity: 0;
+  z-index: 1;
+  transition: var(--transition-1);
 }
+
+.certificados-item:hover .certificado-item-icon-box {
+  --scale: 1;
+  opacity: 1;
+}
+
+.certificados-item:hover img {
+  opacity: 0.5;
+}
+
+
+
 
 
 
