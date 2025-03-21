@@ -117,10 +117,10 @@ navigationLinks.forEach(link => {
   });
 });
 
-//popup box cv
+//popup box modal
 const opnbtn = document.getElementById("open-modal");
 const clsbtn = document.getElementById("close-modal");
-const modal = document.getElementById("cv-modal");
+const modal = document.getElementById("modal");
 
 opnbtn.addEventListener("click",() =>{
     modal.classList.add("open");
