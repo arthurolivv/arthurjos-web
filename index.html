@@ -75,7 +75,7 @@
                     <p>PT-BR</p>
                   </div>
                   <div class="cv-lang-item" onclick="window.open('assets/pdf/CV Arthur English.pdf', '_blank')">
-                    <img src="assets/img/country/usa.png" alt="Bandeira do Brasil">
+                    <img src="assets/img/country/usa.png" alt="Bandeira dos Estados Unidos">
                     <p>EN-US</p>
                   </div>
                 </div>
@@ -690,8 +690,10 @@
       
                 <h3 class="h3 form-title">Formulário de Contato</h3>
       
-                <form action="https://formsubmit.co/art.jacintho14@gmail.com" method="POST" class="form" data-form>
-      
+                <form action="https://api.web3forms.com/submit" method="POST" class="form" data-form>
+                  <input type="hidden" name="access_key" value="78bcdd3f-c271-48bf-a604-79fb42d0a849">
+                  <input type="checkbox" name="botcheck" id="" style="display: none;">
+
                   <div class="input-wrapper">
                     <input type="text" name="name" required class="form-input" placeholder="Nome Completo" required data-form-input>
       
@@ -699,21 +701,18 @@
 
                   </div>
 
-                  <input id="subject-form" type="text" name="_subject" class="form-input" placeholder="Assunto" required></input>
+                  <input id="subject-form" type="text" name="subject" class="form-input" placeholder="Assunto" required></input>
 
                   <textarea name="message" class="form-input" placeholder="Mensagem" required data-form-input></textarea>
-                  
+                 
                   <input type="hidden" name="_captcha" value="false">
-
-                  <!-- encaminhar usuraio para outra pagina  -->
-                  <input type="hidden" name="_next" value=""> 
 
                   <button class="form-btn" type="submit" disabled data-form-btn>
                     <ion-icon name="send"></ion-icon>
                     <span>Enviar Mensagem</span>
                   </button>
-      
-                </form>
+                    
+                 </form>
       
               </section>
       

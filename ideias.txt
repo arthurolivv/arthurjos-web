@@ -1,4 +1,0 @@
-cargo atual
-cargo antigo
-graduação loading separado por setores
-tecnico completed

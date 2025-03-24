@@ -117,14 +117,25 @@ navigationLinks.forEach(link => {
   });
 });
 
-//popup box modal
-const opnbtn = document.getElementById("open-modal");
-const clsbtn = document.getElementById("close-modal");
-const modal = document.getElementById("modal");
+//popup box modal cv languages
+const opnbtncv = document.getElementById("open-modal");
+const clsbtncv = document.getElementById("close-modal");
+const modalcv = document.getElementById("modal");
 
 opnbtn.addEventListener("click",() =>{
-    modal.classList.add("open");
+    modalcv.classList.add("open");
 });
 clsbtn.addEventListener("click",() =>{
-    modal.classList.remove("open");
+    modalcv.classList.remove("open");
+});
+
+//success email
+document.querySelector("form").addEventListener("submit", function (e) {
+  e.preventDefault(); // Impede o envio padrão para capturar a resposta
+  fetch(this.action, {
+      method: this.method,
+      body: new FormData(this),
+  }).then(() => {
+      window.location.href = "https://127.0.0.1:5500/tks.html"; // URL personalizada
+  });
 });
