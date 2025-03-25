@@ -168,3 +168,58 @@ document.querySelector(".contact-seemore-in").addEventListener("click", function
 document.querySelector(".contact-seemore-out").addEventListener("click", function() {
 document.querySelector("main").scrollIntoView({ behavior: "smooth" });
 });
+
+//modal portfolio
+// Abrir modal ao clicar no item do projeto
+document.querySelectorAll('.project-item').forEach(item => {
+  item.addEventListener('click', (event) => {
+    event.preventDefault();
+    
+    // Pegando os dados do projeto
+    const title = item.getAttribute('data-title');
+    const description = item.getAttribute('data-description');
+    const githubLink = item.getAttribute('data-github');
+    const images = JSON.parse(item.getAttribute('data-images'));
+
+    // Atualizando conteúdo do modal
+    document.getElementById('projectTitle').textContent = title;
+    document.getElementById('projectText').textContent = description;
+    document.getElementById('githubLink').setAttribute('href', githubLink);
+    let currentIndex = 0;
+
+    // Função para atualizar a imagem no carrossel
+    const updateImage = () => {
+      document.getElementById('carouselImage').src = images[currentIndex];
+    };
+
+    // Atualizando a imagem inicial
+    updateImage();
+
+    // Funções do carrossel
+    document.getElementById('prevBtn').addEventListener('click', () => {
+      currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
+      updateImage();
+    });
+
+    document.getElementById('nextBtn').addEventListener('click', () => {
+      currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
+      updateImage();
+    });
+
+    // Mostra o modal
+    document.getElementById('projectModal').style.display = 'block';
+  });
+});
+
+// Fechar modal
+document.querySelector('.close-btn').addEventListener('click', () => {
+  document.getElementById('projectModal').style.display = 'none';
+});
+
+// Fechar modal se clicar fora da área do conteúdo
+window.addEventListener('click', (event) => {
+  if (event.target === document.getElementById('projectModal')) {
+    document.getElementById('projectModal').style.display = 'none';
+  }
+});
+

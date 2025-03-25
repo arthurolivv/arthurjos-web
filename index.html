@@ -611,7 +611,7 @@
       
                 </div>
       
-                <ul class="project-list">
+                <!-- <ul class="project-list">
       
                   <li class="project-item  active" data-filter-item data-category="java">
                     <a href="#">
@@ -631,7 +631,42 @@
                     </a>
                   </li>
       
+                </ul> -->
+
+                <ul class="project-list">
+                  <li class="project-item active" data-filter-item data-category="java" data-title="Finance" data-description="Sistema de finanças desenvolvido em Java." data-github="https://github.com/usuario/finance" data-images='["./assets/images/project-1.jpg", "./assets/images/project-2.jpg", "./assets/images/project-3.jpg"]'>
+                    <a href="#">
+                      <figure class="project-img">
+                        <div class="project-item-icon-box">
+                          <ion-icon name="logo-github"></ion-icon>
+                        </div>
+                        <img src="./assets/images/project-1.jpg" alt="finance" loading="lazy">
+                      </figure>
+                      <h3 class="project-title">Finance</h3>
+                      <p class="project-category">Java</p>
+                    </a>
+                  </li>
                 </ul>
+                
+                <!-- Modal -->
+                <div id="projectModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close-btn">&times;</span>
+                    <div id="carousel" class="carousel">
+                      <img id="carouselImage" src="" alt="Project Image">
+                      <button id="prevBtn" class="carousel-btn">❮</button>
+                      <button id="nextBtn" class="carousel-btn">❯</button>
+                    </div>
+                    <div id="projectDescription">
+                      <h3 id="projectTitle"></h3>
+                      <p id="projectText"></p>
+                      <a id="githubLink" href="" target="_blank">Ver no GitHub</a>
+                    </div>
+                  </div>
+                </div>
+                
+
+
       
               </section>
       
