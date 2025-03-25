@@ -1028,7 +1028,25 @@ main {
   color: var(--light-gray);
   font-weight: var(--fw-300);
   line-height: 1.6;
+  display: flex; /* Usando flexbox para alinhar o texto e o ícone na mesma linha */
+  align-items: center; /* Alinha verticalmente o texto e o ícone */
 }
+
+.timeline-text ion-icon {
+  font-size: 20px; /* Ajuste o tamanho do ícone conforme necessário */
+  margin-left: 5px;  /* Adiciona um pequeno espaço entre o texto e o ícone */
+}
+
+.timeline-text a {
+  color: inherit; /* Herda a cor do texto */
+  text-decoration: none; /* Remove o sublinhado do link */
+  display: inline-flex; /* Alinha o texto e o ícone na mesma linha */
+  align-items: center; /* Alinha verticalmente o texto e o ícone */
+}
+
+
+
+
 
 /*=================================Resume - Certificados=====================================*/
 
