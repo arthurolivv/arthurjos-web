@@ -160,3 +160,11 @@ document.getElementById("contact-form").addEventListener("submit", function (e) 
       alert("Erro ao enviar o formulário.");
   });
 });
+
+//ver mais button
+document.querySelector(".contact-seemore-in").addEventListener("click", function() {
+  document.querySelector("main").scrollIntoView({ behavior: "smooth" });
+  });
+document.querySelector(".contact-seemore-out").addEventListener("click", function() {
+document.querySelector("main").scrollIntoView({ behavior: "smooth" });
+});
