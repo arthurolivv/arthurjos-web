@@ -749,6 +749,10 @@ main {
     padding-bottom: 4px;
     padding-left: 7px;
   }
+
+  .social-link{
+    pointer-events: auto;
+  }
   
   .social-item .social-link {
     color: var(--light-gray-70);

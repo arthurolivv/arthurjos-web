@@ -117,6 +117,8 @@ navigationLinks.forEach(link => {
   });
 });
 
+
+// //  modals
 // Seleciona todos os botões que abrem modais
 document.querySelectorAll("[data-open-modal]").forEach(button => {
   button.addEventListener("click", () => {
