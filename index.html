@@ -59,29 +59,28 @@
           </div>
 
 
-            <div class="contact-container" id="open-modal">
-                <ion-icon class="cv-icon" name="document"></ion-icon>
-                Currículo
-            </div>
+          <div class="contact-container" data-open-modal="modal-cv">
+            <ion-icon class="cv-icon" name="document"></ion-icon>
+            Currículo
+          </div>
 
-            <div class="cv-modal" id="modal">
+            <div class="cv-modal" id="modal-cv">
               <div class="cv-modal-in">
-                <button class="btn-close-modal" id="close-modal">
-                  <ion-icon name="close-outline"></ion-icon>
-                </button>
-                <div class="cv-lang-opts">
-                  <div class="cv-lang-item" onclick="window.open('assets/pdf/ArthurJOS_CV.pdf', '_blank')">
-                    <img src="assets/img/country/brazil.png" alt="Bandeira do Brasil">
-                    <p>PT-BR</p>
+                  <button class="btn-close-modal" data-close-modal="modal-cv">
+                      <ion-icon name="close-outline"></ion-icon>
+                  </button>
+                  <div class="cv-lang-opts">
+                      <div class="cv-lang-item" data-cv="assets/pdf/ArthurJOS_CV.pdf">
+                          <img src="assets/img/country/brazil.png" alt="Bandeira do Brasil">
+                          <p>PT-BR</p>
+                      </div>
+                      <div class="cv-lang-item" data-cv="assets/pdf/CV Arthur English.pdf">
+                          <img src="assets/img/country/usa.png" alt="Bandeira dos Estados Unidos">
+                          <p>EN-US</p>
+                      </div>
                   </div>
-                  <div class="cv-lang-item" onclick="window.open('assets/pdf/CV Arthur English.pdf', '_blank')">
-                    <img src="assets/img/country/usa.png" alt="Bandeira dos Estados Unidos">
-                    <p>EN-US</p>
-                  </div>
-                </div>
-                
               </div>
-            </div>
+          </div>
             
             
             <div class="contact-seemore-in">
@@ -690,29 +689,23 @@
       
                 <h3 class="h3 form-title">Formulário de Contato</h3>
       
-                <form action="https://api.web3forms.com/submit" method="POST" class="form" data-form>
+                <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
                   <input type="hidden" name="access_key" value="78bcdd3f-c271-48bf-a604-79fb42d0a849">
                   <input type="checkbox" name="botcheck" id="" style="display: none;">
-
+              
                   <div class="input-wrapper">
-                    <input type="text" name="name" required class="form-input" placeholder="Nome Completo" required data-form-input>
-      
-                    <input  type="email" name="email" required class="form-input" placeholder="E-mail" required data-form-input>
-
+                      <input type="text" name="name" required class="form-input" placeholder="Nome Completo">
+                      <input type="email" name="email" required class="form-input" placeholder="E-mail">
                   </div>
-
-                  <input id="subject-form" type="text" name="subject" class="form-input" placeholder="Assunto" required></input>
-
-                  <textarea name="message" class="form-input" placeholder="Mensagem" required data-form-input></textarea>
-                 
-                  <input type="hidden" name="_captcha" value="false">
-
-                  <button class="form-btn" type="submit" disabled data-form-btn>
-                    <ion-icon name="send"></ion-icon>
-                    <span>Enviar Mensagem</span>
+              
+                  <input id="subject-form" type="text" name="subject" class="form-input" placeholder="Assunto" required>
+                  <textarea name="message" class="form-input" placeholder="Mensagem" required></textarea>
+              
+                  <button class="form-btn" type="submit">
+                      <ion-icon name="send"></ion-icon>
+                      <span>Enviar Mensagem</span>
                   </button>
-                    
-                 </form>
+              </form>
       
               </section>
       

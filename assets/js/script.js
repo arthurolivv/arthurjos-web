@@ -117,25 +117,44 @@ navigationLinks.forEach(link => {
   });
 });
 
-//popup box modal cv languages
-const opnbtncv = document.getElementById("open-modal");
-const clsbtncv = document.getElementById("close-modal");
-const modalcv = document.getElementById("modal");
+// Seleciona todos os botões que abrem modais
+document.querySelectorAll("[data-open-modal]").forEach(button => {
+  button.addEventListener("click", () => {
+      const modalId = button.getAttribute("data-open-modal"); // Pega o ID do modal
+      document.getElementById(modalId).classList.add("open");
+  });
+});
 
-opnbtn.addEventListener("click",() =>{
-    modalcv.classList.add("open");
+// Seleciona todos os botões que fecham modais
+document.querySelectorAll("[data-close-modal]").forEach(button => {
+  button.addEventListener("click", () => {
+      const modalId = button.getAttribute("data-close-modal"); // Pega o ID do modal
+      document.getElementById(modalId).classList.remove("open");
+  });
 });
-clsbtn.addEventListener("click",() =>{
-    modalcv.classList.remove("open");
-});
+
 
 //success email
-document.querySelector("form").addEventListener("submit", function (e) {
-  e.preventDefault(); // Impede o envio padrão para capturar a resposta
-  fetch(this.action, {
-      method: this.method,
-      body: new FormData(this),
-  }).then(() => {
-      window.location.href = "https://127.0.0.1:5500/tks.html"; // URL personalizada
+document.getElementById("contact-form").addEventListener("submit", function (e) {
+  e.preventDefault(); // Impede o envio padrão do formulário
+
+  const form = this;
+  const formData = new FormData(form);
+
+  fetch(form.action, {
+      method: form.method,
+      body: formData
+  })
+  .then(response => response.json())
+  .then(data => {
+      if (data.success) {
+          window.location.href = "tks.html"; // Redireciona localmente após o envio bem-sucedido
+      } else {
+          alert("Erro ao enviar o formulário. Tente novamente.");
+      }
+  })
+  .catch(error => {
+      console.error("Erro:", error);
+      alert("Erro ao enviar o formulário.");
   });
 });
