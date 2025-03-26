@@ -250,6 +250,94 @@
   transition: font-size 0.3s ease-in-out;
 }
 
+.cv-modal{
+  background-color: #000000be;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: var(--transition-1);
+  z-index: -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+}
+
+.cv-modal.open{
+  opacity: 1;
+  z-index: 999;
+}
+
+.cv-modal-in{
+  background-color: rgb(26, 26, 26);
+  border-radius: 16px;
+  padding: 15px 15px;
+  text-align: center;
+  width: 220px;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative; /* Necessário para o botão se posicionar corretamente */
+  justify-content: center;
+  display: flex;
+}
+
+.cv-modal-in h2{
+  margin: 0;
+}
+
+.cv-modal-in p {
+  line-height: 24px;
+  margin: 10px 0;
+  position: relative; /* Necessário para o botão se posicionar corretamente */
+}
+
+.btn-close-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: yellow;
+  font-size: 20px;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.btn-close-modal:active{
+  opacity: 0.8;
+}
+
+.cv-lang-opts {
+  display: flex;
+  flex-direction: column; /* Faz com que as opções fiquem uma embaixo da outra */
+  gap: 10px; /* Espaço entre as opções */
+}
+
+.cv-lang-item {
+  display: flex;
+  align-items: center;  /* Alinha os itens verticalmente */
+  justify-content: center; /* Centraliza os itens horizontalmente */
+  gap: 8px;  /* Espaço entre o ícone e o texto */
+  width: 150px;
+}
+
+.cv-lang-item:hover {
+  display: flex;
+  align-items: center;  /* Alinha os itens verticalmente */
+  justify-content: center; /* Centraliza os itens horizontalmente */
+  gap: 8px;  /* Espaço entre o ícone e o texto */
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.cv-lang-item img {
+  width: 20px; /* Ajuste conforme necessário */
+  height: auto;
+}
+
+
 .contact-container {
   padding-left: 40px;
   padding-right: 40px;
@@ -347,68 +435,6 @@
 .contact-seemore-out:hover .seemore-icon {
   font-size: 28px;
   transform: scale(1.1);
-}
-
-
-
-/*=====================================Home: CV=================================*/
-#cv_hubV {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centraliza os elementos */
-    padding-top: 5%;
-}
-
-.cv_button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-.cv_options {
-    border: 0.5px solid rgba(255, 255, 255, 0.05);
-    width: fit-content;
-    min-width: 150px;
-    position: absolute;
-    top: 22%; /* Alinha a caixa abaixo do botão */
-    left: 80%;
-    transform: translateX(-50%);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    background-color: #191919;
-    border-radius: 4px;
-    text-align: center;
-    
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-.cv_option {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-    padding: 8px 16px;
-    text-decoration: none;
-    color: white;
-    transition: background-color 0.3s ease;
-}
-.cv_option:hover {
-    background-color: #333;
-    border-radius: 4px;
-}
-.cv_icon {
-    width: 20px;
-    height: auto;
-}
-/* Efeito hover: Mostra as opções apenas quando o mouse está sobre o botão */
-.cv_button:hover + .cv_options,
-.cv_options:hover {
-    opacity: 1;
-    visibility: visible;
 }
 
 /*=================================Reset=====================================*/
@@ -723,6 +749,10 @@ main {
     padding-bottom: 4px;
     padding-left: 7px;
   }
+
+  .social-link{
+    pointer-events: auto;
+  }
   
   .social-item .social-link {
     color: var(--light-gray-70);
@@ -825,204 +855,17 @@ main {
   line-height: 1.6;
 }
 
-/*=================================Sobre - Testimonials=====================================*/
-
-.testimonials { margin-bottom: 30px; }
-
-.testimonials-title { margin-bottom: 20px; }
-
-.testimonials-list {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 15px;
-  margin: 0 -15px;
-  padding: 25px 15px;
-  padding-bottom: 35px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  overscroll-behavior-inline: contain;
-  scroll-snap-type: inline mandatory;
-}
-
-.testimonials-item {
-  min-width: 100%;
-  scroll-snap-align: center;
-}
-
-.testimonials-avatar-box {
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: translate(15px, -25px);
-  background: var(--bg-gradient-onyx);
-  border-radius: 14px;
-  box-shadow: var(--shadow-1);
-}
-
-.testimonials-item-title { margin-bottom: 7px; }
-
-.testimonials-text {
-  color: var(--light-gray);
-  font-size: var(--fs-6);
-  font-weight: var(--fw-300);
-  line-height: 1.6;
-  display: -webkit-box;
-  line-clamp: 4;
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-/*=================================Sobre - Testimonials_Modal=====================================*/
-
-.modal-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow-y: auto;
-    overscroll-behavior: contain;
-    z-index: 20;
-    pointer-events: none;
-    visibility: hidden;
-  }
-  
-  .modal-container::-webkit-scrollbar { display: none; }
-  
-  .modal-container.active {
-    pointer-events: all;
-    visibility: visible;
-  }
-  
-  .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: hsl(0, 0%, 5%);
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    z-index: 1;
-    transition: var(--transition-1);
-  }
-  
-  .overlay.active {
-    opacity: 0.8;
-    visibility: visible;
-    pointer-events: all;
-  }
-  
-  .testimonials-modal {
-    background: var(--eerie-black-2);
-    position: relative;
-    padding: 15px;
-    margin: 15px 12px;
-    border: 1px solid var(--jet);
-    border-radius: 14px;
-    box-shadow: var(--shadow-5);
-    transform: scale(1.2);
-    opacity: 0;
-    transition: var(--transition-1);
-    z-index: 2;
-  }
-  
-  .modal-container.active .testimonials-modal {
-    transform: scale(1);
-    opacity: 1;
-  }
-  
-  .modal-close-btn {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background: var(--onyx);
-    border-radius: 8px;
-    width: 32px;
-    height: 32px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: var(--white-2);
-    font-size: 18px;
-    opacity: 0.7;
-  }
-  
-  .modal-close-btn:hover,
-  .modal-close-btn:focus { opacity: 1; }
-  
-  .modal-close-btn ion-icon { --ionicon-stroke-width: 50px; }
-  
-  .modal-avatar-box {
-    background: var(--bg-gradient-onyx);
-    width: max-content;
-    border-radius: 14px;
-    margin-bottom: 15px;
-    box-shadow: var(--shadow-2);
-  }
-  
-  .modal-img-wrapper > img { display: none; }
-  
-  .modal-title { margin-bottom: 4px; }
-  
-  .modal-content time {
-    font-size: var(--fs-6);
-    color: var(--light-gray-70);
-    font-weight: var(--fw-300);
-    margin-bottom: 10px;
-  }
-  
-  .modal-content p {
-    color: var(--light-gray);
-    font-size: var(--fs-6);
-    font-weight: var(--fw-300);
-    line-height: 1.6;
-  }
-
-/*=================================Sobre - Clientes=====================================*/
-
-.clients { margin-bottom: 15px; }
-
-.clients-list {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 15px;
-  margin: 0 -15px;
-  padding: 25px;
-  padding-bottom: 25px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  overscroll-behavior-inline: contain;
-  scroll-snap-type: inline mandatory;
-  scroll-padding-inline: 25px;
-}
-
-.clients-item {
-  min-width: 50%;
-  scroll-snap-align: start;
-}
-
-.clients-item img {
-  width: 100%;
-  filter: grayscale(1);
-  transition: var(--transition-1);
-}
-
-.clients-item img:hover { filter: grayscale(0); }
-
 /*=================================Sobre - Experiencia=====================================*/
 
 .experiencia{
   margin-bottom: 15px;
 }
 
+.experiencia .title-wrapper{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
 .home-inf-scrowbar{
   /* width: 90%;
   max-width: 100%; */
@@ -1048,7 +891,7 @@ main {
   height: 100px; */
   border-radius: 6px;
   position: absolute;
-  left: max(calc(150px*10), 100%);
+  left: max(calc(150px*11), 100%);
   animation: scrollleft 30s linear infinite;
   display: flex;
   align-items: center;
@@ -1058,13 +901,11 @@ main {
 }
 
 .item span{
-  visibility: hidden;
-  opacity: 0;
+  
+  color: white;
 }
 
   .item:hover span{
-    visibility: visible;
-    opacity: 1;
     transition: opacity 1s ease-in-out;
     color: white;
   }
@@ -1076,35 +917,39 @@ main {
 }
 
 .item1 {
-  animation-delay: calc(30s / 10 * (10 - 1) * -1);
+  animation-delay: calc(30s / 11 * (11 - 1) * -1);
 }
 .item2 {
-  animation-delay: calc(30s / 10 * (10 - 2) * -1);
+  animation-delay: calc(30s / 11 * (11 - 2) * -1);
 }
 .item3 {
-  animation-delay: calc(30s / 10 * (10 - 3) * -1);
+  animation-delay: calc(30s / 11 * (11 - 3) * -1);
 }
 .item4 {
-  animation-delay: calc(30s / 10 * (10 - 4) * -1);
+  animation-delay: calc(30s / 11 * (11 - 4) * -1);
 }
 .item5 {
-  animation-delay: calc(30s / 10 * (10 - 5) * -1);
+  animation-delay: calc(30s / 11 * (11 - 5) * -1);
 }
 .item6 {
-  animation-delay: calc(30s / 10 * (10 - 6) * -1);
+  animation-delay: calc(30s / 11 * (11 - 6) * -1);
 }
 .item7 {
-  animation-delay: calc(30s / 10 * (10 - 7) * -1);
+  animation-delay: calc(30s / 11 * (11 - 7) * -1);
 }
 .item8 {
-  animation-delay: calc(30s / 10 * (10 - 8) * -1);
+  animation-delay: calc(30s / 11 * (11 - 8) * -1);
 }
 .item9 {
-  animation-delay: calc(30s / 10 * (10 - 9) * -1);
+  animation-delay: calc(30s / 11 * (11 - 9) * -1);
 }
 .item10 {
-  animation-delay: calc(30s / 10 * (10 - 10) * -1);
+  animation-delay: calc(30s / 11 * (11 - 10) * -1);
 }
+.item11 {
+  animation-delay: calc(30s / 11 * (11 - 11) * -1);
+}
+
 
 .img-item{
   width: 100px;
@@ -1117,14 +962,9 @@ main {
   transition: 500ms ease;
 }
 
-/*=================================Resume=====================================*/
+/*=================================Resume - Educaçao e Experiencia=====================================*/
 
 .article-title { margin-bottom: 30px; }
-
-
-/**
- * education and experience 
- */
 
 .timeline { margin-bottom: 30px; }
 
@@ -1188,7 +1028,27 @@ main {
   color: var(--light-gray);
   font-weight: var(--fw-300);
   line-height: 1.6;
+  display: flex; /* Usando flexbox para alinhar o texto e o ícone na mesma linha */
+  align-items: center; /* Alinha verticalmente o texto e o ícone */
 }
+
+.timeline-text ion-icon {
+  font-size: 20px; /* Ajuste o tamanho do ícone conforme necessário */
+  margin-left: 5px;  /* Adiciona um pequeno espaço entre o texto e o ícone */
+}
+
+.timeline-text a {
+  color: inherit; /* Herda a cor do texto */
+  text-decoration: none; /* Remove o sublinhado do link */
+  display: inline-flex; /* Alinha o texto e o ícone na mesma linha */
+  align-items: center; /* Alinha verticalmente o texto e o ícone */
+}
+
+
+
+
+
+/*=================================Resume - Certificados=====================================*/
 
 .certificados { margin-bottom: 30px; }
 
@@ -1196,7 +1056,88 @@ main {
   display: flex;
   align-items: center;
   gap: 15px;
-  margin-bottom: 25px;
+  }
+
+.certificados {
+  margin-bottom: 10px;
+}
+
+.certificados-list {
+  display: flex;
+  overflow-x: auto;
+  gap: 15px;
+  width: 100%;
+  padding: 20px;
+  scroll-snap-type: x mandatory;
+}
+
+.certificados-item {
+  flex: 0 0 auto;
+  width: 200px;
+  scroll-snap-align: start;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+.certificados-item:hover {
+  transform: scale(1.05);
+}
+
+.certificado-image-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 16px;
+  margin-bottom: 5px;
+}
+
+.certificado-image-wrapper img {
+  width: 100%;
+  display: block;
+  transition: var(--transition-1);
+}
+
+.certificado-item-icon-box {
+  --scale: 0.8;
+  background: var(--jet);
+  color: var(--orange-yellow-crayola);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(var(--scale));
+  font-size: 20px;
+  padding: 15px;
+  border-radius: 12px;
+  opacity: 0;
+  z-index: 1;
+  transition: var(--transition-1);
+}
+
+.certificados-item:hover .certificado-item-icon-box {
+  --scale: 1;
+  opacity: 1;
+}
+
+.certificados-item:hover img {
+  opacity: 0.5;
+}
+
+.certificados-title,
+.certificados-org { margin-left: 10px; }
+
+.certificados-title {
+  color: var(--white-2);
+  font-size: var(--fs-5);
+  font-weight: var(--fw-400);
+  text-transform: capitalize;
+  line-height: 1.3;
+}
+
+.certificados-org {
+  color: var(--light-gray-70);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-300);
 }
 
 /*=================================Resume - Skills=====================================*/
@@ -1233,84 +1174,6 @@ main {
   height: 100%;
   border-radius: inherit;
 }
-
-/*=================================Resume - Certificados=====================================*/
-
-
-.certificados {
-  margin-bottom: 30px;
-}
-
-.certificados-title {
-  margin-bottom: 20px;
-}
-
-.certificados-list {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 15px;
-  margin: 0 -15px;
-  padding: 25px 15px;
-  padding-bottom: 35px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  overscroll-behavior-inline: contain;
-  scroll-snap-type: inline mandatory;
-  -webkit-overflow-scrolling: touch; /* For better scrolling on iOS */
-}
-
-.certificados-item {
-  position: relative;
-  width: 300px; /* Fixed width for each item */
-  height: auto;
-  flex-shrink: 0; /* Prevent items from shrinking */
-  border: 1px solid rgba(255, 255, 255, 0.1) ;
-  border-radius: 20px;
-}
-
-.certificado-image-wrapper {
-  position: relative;
-  width: 100%;
-  height: auto;
-  overflow: hidden; /* Keeps images contained */
-  border-radius: 20px;
-}
-
-.certificado-image-wrapper img {
-  width: 100%;
-  height: auto;
-  display: block;
-  transition: opacity 0.3s ease-in-out;
-}
-
-.certificado-image-wrapper .certificado-info {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  padding: 15px;
-  text-align: center;
-  opacity: 0; /* Initially hidden */
-  transition: opacity 0.3s ease-in-out;
-  width: 90%; /* Adjust as needed */
-}
-
-.certificados-item:hover{
-  cursor: pointer;
-}
-
-.certificados-item:hover .certificado-image-wrapper .certificado-info {
-  opacity: 1; /* Show text content on hover */
-}
-
-.certificados-item:hover .certificado-image-wrapper img {
-  opacity: 0.05; /* Fade image slightly when text appears */
-
-  
-}
-
 
 /*=================================Portfolio=====================================*/
 
@@ -1413,11 +1276,12 @@ main {
   transition: var(--transition-1);
 }
 
-.project-item > a:hover .project-img::before { background: hsla(0, 0%, 0%, 0.5); }
+.project-item > a:hover .project-img::before { 
+  background: hsla(0, 0%, 0%, 0.5); 
+}
 
 .project-item-icon-box {
   --scale: 0.8;
-
   background: var(--jet);
   color: var(--orange-yellow-crayola);
   position: absolute;
@@ -1465,7 +1329,92 @@ main {
   font-weight: var(--fw-300);
 }
 
-/*=================================Blog=====================================*/
+/* Modal Styles */
+.modal {
+  display: none; /* Hide by default */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  position: relative;
+}
+
+.close-btn {
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.carousel-btn {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+#prevBtn {
+  left: 10px;
+}
+
+#nextBtn {
+  right: 10px;
+}
+
+#projectDescription {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#githubLink {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #007BFF;
+  color: white;
+  text-decoration: none;
+}
+
+#githubLink:hover {
+  background-color: #0056b3;
+}
+
+
+/*=================================Posts=====================================*/
 
 .blog-posts { margin-bottom: 10px; }
 
@@ -1549,25 +1498,6 @@ main {
 
 /*=================================Contato=====================================*/
 
-.mapbox {
-    position: relative;
-    height: 250px;
-    width: 100%;
-    border-radius: 16px;
-    margin-bottom: 30px;
-    border: 1px solid var(--jet);
-    overflow: hidden;
-  }
-  
-  .mapbox figure { height: 100%; }
-  
-  .mapbox iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-    filter: grayscale(1) invert(1);
-  }
-  
   .contact-form { margin-bottom: 10px; }
   
   .form-title { margin-bottom: 20px; }
@@ -1576,6 +1506,10 @@ main {
     display: grid;
     grid-template-columns: 1fr;
     gap: 25px;
+    margin-bottom: 25px;
+  }
+
+  #subject-form {
     margin-bottom: 25px;
   }
   
@@ -1587,6 +1521,16 @@ main {
     border: 1px solid var(--jet);
     border-radius: 14px;
     outline: none;
+  }
+
+  .form-input-subject {
+    color: var(--white-2);
+    font-size: var(--fs-6);
+    font-weight: var(--fw-400);
+    padding: 13px 20px;
+    border: 1px solid var(--jet);
+    border-radius: 14px;
+   
   }
   
   .form-input::placeholder { font-weight: var(--fw-500); }
@@ -2081,6 +2025,18 @@ main { margin-bottom: 60px; }
     width: max-content;
     margin: auto;
   }
+
+  .item span{
+    visibility: hidden;
+    opacity: 0;
+  }
+  
+    .item:hover span{
+      visibility: visible;
+      opacity: 1;
+      transition: opacity 1s ease-in-out;
+      color: white;
+    }
   
 /*=================================RESPONSIVIDADE - maior que 1024px - Navbar=====================================*/
 

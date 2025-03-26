@@ -14,45 +14,6 @@ const sidebarBtn = document.querySelector("[data-sidebar-btn]");
 // sidebar toggle functionality for mobile
 sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); });
 
-
-
-// testimonials variables
-const testimonialsItem = document.querySelectorAll("[data-testimonials-item]");
-const modalContainer = document.querySelector("[data-modal-container]");
-const modalCloseBtn = document.querySelector("[data-modal-close-btn]");
-const overlay = document.querySelector("[data-overlay]");
-
-// modal variable
-const modalImg = document.querySelector("[data-modal-img]");
-const modalTitle = document.querySelector("[data-modal-title]");
-const modalText = document.querySelector("[data-modal-text]");
-
-// modal toggle function
-const testimonialsModalFunc = function () {
-  modalContainer.classList.toggle("active");
-  overlay.classList.toggle("active");
-}
-
-// add click event to all modal items
-for (let i = 0; i < testimonialsItem.length; i++) {
-
-  testimonialsItem[i].addEventListener("click", function () {
-
-    modalImg.src = this.querySelector("[data-testimonials-avatar]").src;
-    modalImg.alt = this.querySelector("[data-testimonials-avatar]").alt;
-    modalTitle.innerHTML = this.querySelector("[data-testimonials-title]").innerHTML;
-    modalText.innerHTML = this.querySelector("[data-testimonials-text]").innerHTML;
-
-    testimonialsModalFunc();
-
-  });
-
-}
-
-// add click event to modal close button
-modalCloseBtn.addEventListener("click", testimonialsModalFunc);
-overlay.addEventListener("click", testimonialsModalFunc);
-
 // custom select variables
 const select = document.querySelector("[data-select]");
 const selectItems = document.querySelectorAll("[data-select-item]");
@@ -111,7 +72,6 @@ for (let i = 0; i < filterBtn.length; i++) {
 
 }
 
-
 // contact form variables
 const form = document.querySelector("[data-form]");
 const formInputs = document.querySelectorAll("[data-form-input]");
@@ -130,8 +90,6 @@ for (let i = 0; i < formInputs.length; i++) {
 
   });
 }
-
-
 
 // navbar variables
 const navigationLinks = document.querySelectorAll("[data-nav-link]");
@@ -158,3 +116,110 @@ navigationLinks.forEach(link => {
     });
   });
 });
+
+
+// //  modals
+// Seleciona todos os botões que abrem modais
+document.querySelectorAll("[data-open-modal]").forEach(button => {
+  button.addEventListener("click", () => {
+      const modalId = button.getAttribute("data-open-modal"); // Pega o ID do modal
+      document.getElementById(modalId).classList.add("open");
+  });
+});
+
+// Seleciona todos os botões que fecham modais
+document.querySelectorAll("[data-close-modal]").forEach(button => {
+  button.addEventListener("click", () => {
+      const modalId = button.getAttribute("data-close-modal"); // Pega o ID do modal
+      document.getElementById(modalId).classList.remove("open");
+  });
+});
+
+
+//success email
+document.getElementById("contact-form").addEventListener("submit", function (e) {
+  e.preventDefault(); // Impede o envio padrão do formulário
+
+  const form = this;
+  const formData = new FormData(form);
+
+  fetch(form.action, {
+      method: form.method,
+      body: formData
+  })
+  .then(response => response.json())
+  .then(data => {
+      if (data.success) {
+          window.location.href = "tks.html"; // Redireciona localmente após o envio bem-sucedido
+      } else {
+          alert("Erro ao enviar o formulário. Tente novamente.");
+      }
+  })
+  .catch(error => {
+      console.error("Erro:", error);
+      alert("Erro ao enviar o formulário.");
+  });
+});
+
+//ver mais button
+document.querySelector(".contact-seemore-in").addEventListener("click", function() {
+  document.querySelector("main").scrollIntoView({ behavior: "smooth" });
+  });
+document.querySelector(".contact-seemore-out").addEventListener("click", function() {
+document.querySelector("main").scrollIntoView({ behavior: "smooth" });
+});
+
+//modal portfolio
+// Abrir modal ao clicar no item do projeto
+document.querySelectorAll('.project-item').forEach(item => {
+  item.addEventListener('click', (event) => {
+    event.preventDefault();
+    
+    // Pegando os dados do projeto
+    const title = item.getAttribute('data-title');
+    const description = item.getAttribute('data-description');
+    const githubLink = item.getAttribute('data-github');
+    const images = JSON.parse(item.getAttribute('data-images'));
+
+    // Atualizando conteúdo do modal
+    document.getElementById('projectTitle').textContent = title;
+    document.getElementById('projectText').textContent = description;
+    document.getElementById('githubLink').setAttribute('href', githubLink);
+    let currentIndex = 0;
+
+    // Função para atualizar a imagem no carrossel
+    const updateImage = () => {
+      document.getElementById('carouselImage').src = images[currentIndex];
+    };
+
+    // Atualizando a imagem inicial
+    updateImage();
+
+    // Funções do carrossel
+    document.getElementById('prevBtn').addEventListener('click', () => {
+      currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
+      updateImage();
+    });
+
+    document.getElementById('nextBtn').addEventListener('click', () => {
+      currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
+      updateImage();
+    });
+
+    // Mostra o modal
+    document.getElementById('projectModal').style.display = 'block';
+  });
+});
+
+// Fechar modal
+document.querySelector('.close-btn').addEventListener('click', () => {
+  document.getElementById('projectModal').style.display = 'none';
+});
+
+// Fechar modal se clicar fora da área do conteúdo
+window.addEventListener('click', (event) => {
+  if (event.target === document.getElementById('projectModal')) {
+    document.getElementById('projectModal').style.display = 'none';
+  }
+});
+
