@@ -220,11 +220,11 @@ header.home .finisher-header {
 }
 
 .position {
-  color: var(--white-2);
+  color: var(--c3);
   font-size: 18px;
   font-family: Poppins;
   text-align: center;
-  font-weight: 400;
+  font-weight: var(--fw-600);
   word-wrap: break-word;
 }
 
@@ -546,7 +546,7 @@ article {
   justify-content: center;
   align-items: center;
   font-size: 16px;
-  color: var(--white);
+  color: var(--c3);
   box-shadow: var(--shadow-1);
   z-index: 1;
 }
@@ -620,7 +620,7 @@ article.active {
   left: 0;
   width: 30px;
   height: 3px;
-  background: var(--c9);
+  background: var(--c3);
   border-radius: 3px;
 }
 
@@ -801,7 +801,7 @@ main {
 }
 
 .contact-info :is(.contact-link, time, address) {
-  color: var(--white-2);
+  color: var(--c3);
   font-size: var(--fs-7);
 }
 
@@ -1713,7 +1713,7 @@ textarea.form-input::-webkit-resizer {
 }
 
 .form-input:focus:invalid {
-  border-color: var(--c9);
+  border-color: var(--c3);
 }
 
 .form-btn {
