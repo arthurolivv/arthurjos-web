@@ -17,7 +17,7 @@ new FinisherHeader({
     }
   },
   "colors": {
-    "background": "#050505",
+    "background": "#0B131C",
     "particles": [
       "#fbfcca",
       "#d7f3fe",
