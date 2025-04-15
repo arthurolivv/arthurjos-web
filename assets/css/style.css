@@ -239,17 +239,19 @@ header.home .finisher-header {
 }
 
 .cv-modal-in {
-  background-color: var(--black);
+  background-color: var(--c1);
   border-radius: 16px;
   padding: 15px 15px;
   text-align: center;
   width: 220px;
   color: var(--white);
+  font-weight: var(--fw-600);
   border: 1px solid var(--black-border);
   position: relative;
   /* Necessário para o botão se posicionar corretamente */
   justify-content: center;
   display: flex;
+  border: 1px solid var(--line-default);
 }
 
 .cv-modal-in h2 {
@@ -267,7 +269,7 @@ header.home .finisher-header {
   position: absolute;
   top: 10px;
   right: 10px;
-  color: var(--white);
+  color: var(--c3);
   font-size: 20px;
   cursor: pointer;
   background: none;
@@ -802,6 +804,13 @@ main {
   font-size: var(--fs-7);
 }
 
+#contact-link-whatsapp {
+  color: var(--c3);
+  font-weight: 400;
+  font-style: oblique;
+  text-decoration: underline;
+}
+
 .contact-info address {
   font-style: normal;
 }
@@ -866,6 +875,7 @@ main {
 
 .navbar-link.active {
   color: var(--c3);
+  font-weight: var(--fw-600);
 }
 
 /*=================================Sobre=====================================*/
@@ -1475,62 +1485,58 @@ main {
   font-weight: var(--fw-300);
 }
 
-/* Modal Styles */
-.modal {
+/* .modal {
   display: none;
-  /* Hide by default */
   position: fixed;
-  z-index: 1;
+  z-index: 1000;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  overflow: auto;
-  background-color: var(--black);
+  background-color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
 }
 
 .modal-content {
-  background-color: var(--white);
-  margin: 15% auto;
+  background: white;
   padding: 20px;
-  border: 1px solid --black-border;
-  width: 80%;
   position: relative;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 10px;
+  text-align: center;
 }
 
 .close-btn {
-  color: #aaa;
-  font-size: 28px;
-  font-weight: bold;
   position: absolute;
+  right: 15px;
   top: 10px;
-  right: 20px;
-  cursor: pointer;
-}
-
-.close-btn:hover,
-.close-btn:focus {
-  color: var(--black);
-  text-decoration: none;
+  font-size: 24px;
   cursor: pointer;
 }
 
 .carousel {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: relative;
+  margin-bottom: 15px;
+}
+
+.carousel img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
 }
 
 .carousel-btn {
-  background-color: var(--black);
-  color: var(--white);
-  border: none;
-  padding: 10px;
-  font-size: 20px;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--white);
+  border: none;
+  font-size: 20px;
+  padding: 8px 12px;
+  border-radius: 50%;
   cursor: pointer;
 }
 
@@ -1540,25 +1546,8 @@ main {
 
 #nextBtn {
   right: 10px;
-}
+} */
 
-#projectDescription {
-  text-align: center;
-  margin-top: 20px;
-}
-
-#githubLink {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 10px;
-  background-color: red;
-  color: var(--white);
-  text-decoration: none;
-}
-
-#githubLink:hover {
-  background-color: #0056b3;
-}
 
 
 /*=================================Posts=====================================*/

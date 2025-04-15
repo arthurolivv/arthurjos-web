@@ -117,21 +117,21 @@ navigationLinks.forEach(link => {
   });
 });
 
-
+/*
 // //  modals
 // Seleciona todos os botões que abrem modais
 document.querySelectorAll("[data-open-modal]").forEach(button => {
   button.addEventListener("click", () => {
-      const modalId = button.getAttribute("data-open-modal"); // Pega o ID do modal
-      document.getElementById(modalId).classList.add("open");
+    const modalId = button.getAttribute("data-open-modal"); // Pega o ID do modal
+    document.getElementById(modalId).classList.add("open");
   });
 });
 
 // Seleciona todos os botões que fecham modais
 document.querySelectorAll("[data-close-modal]").forEach(button => {
   button.addEventListener("click", () => {
-      const modalId = button.getAttribute("data-close-modal"); // Pega o ID do modal
-      document.getElementById(modalId).classList.remove("open");
+    const modalId = button.getAttribute("data-close-modal"); // Pega o ID do modal
+    document.getElementById(modalId).classList.remove("open");
   });
 });
 
@@ -144,82 +144,92 @@ document.getElementById("contact-form").addEventListener("submit", function (e) 
   const formData = new FormData(form);
 
   fetch(form.action, {
-      method: form.method,
-      body: formData
+    method: form.method,
+    body: formData
   })
-  .then(response => response.json())
-  .then(data => {
+    .then(response => response.json())
+    .then(data => {
       if (data.success) {
-          window.location.href = "tks.html"; // Redireciona localmente após o envio bem-sucedido
+        window.location.href = "tks.html"; // Redireciona localmente após o envio bem-sucedido
       } else {
-          alert("Erro ao enviar o formulário. Tente novamente.");
+        alert("Erro ao enviar o formulário. Tente novamente.");
       }
-  })
-  .catch(error => {
+    })
+    .catch(error => {
       console.error("Erro:", error);
       alert("Erro ao enviar o formulário.");
-  });
+    });
 });
 
 //ver mais button
-document.querySelector(".contact-seemore-in").addEventListener("click", function() {
+document.querySelector(".contact-seemore-in").addEventListener("click", function () {
   document.querySelector("main").scrollIntoView({ behavior: "smooth" });
-  });
-document.querySelector(".contact-seemore-out").addEventListener("click", function() {
-document.querySelector("main").scrollIntoView({ behavior: "smooth" });
+});
+document.querySelector(".contact-seemore-out").addEventListener("click", function () {
+  document.querySelector("main").scrollIntoView({ behavior: "smooth" });
 });
 
 //modal portfolio
-// Abrir modal ao clicar no item do projeto
+const modal = document.getElementById('projectModal');
+const modalImage = document.getElementById('carouselImage');
+const titleEl = document.getElementById('projectTitle');
+const descEl = document.getElementById('projectText');
+const githubEl = document.getElementById('githubLink');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+
+let images = [];
+let currentIndex = 0;
+
+// Atualiza a imagem
+const updateImage = () => {
+  modalImage.src = images[currentIndex];
+};
+
+// Abre o modal com dados do projeto
+function openModal(title, description, githubLink, imgArray) {
+  titleEl.textContent = title;
+  descEl.textContent = description;
+  githubEl.href = githubLink;
+  images = imgArray;
+  currentIndex = 0;
+  updateImage();
+
+  modal.classList.add('open');
+}
+
+// Fecha o modal
+function closeModal() {
+  modal.classList.remove('open');
+}
+
+// Eventos do carrossel
+prevBtn.onclick = () => {
+  currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
+  updateImage();
+};
+
+nextBtn.onclick = () => {
+  currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
+  updateImage();
+};
+
+// Fecha ao clicar fora
+window.addEventListener('click', (e) => {
+  if (e.target === modal) closeModal();
+});
+
+// Ativa modal ao clicar no item do projeto
 document.querySelectorAll('.project-item').forEach(item => {
-  item.addEventListener('click', (event) => {
-    event.preventDefault();
-    
-    // Pegando os dados do projeto
+  item.addEventListener('click', (e) => {
+    e.preventDefault();
     const title = item.getAttribute('data-title');
     const description = item.getAttribute('data-description');
     const githubLink = item.getAttribute('data-github');
-    const images = JSON.parse(item.getAttribute('data-images'));
+    const imageList = JSON.parse(item.getAttribute('data-images'));
 
-    // Atualizando conteúdo do modal
-    document.getElementById('projectTitle').textContent = title;
-    document.getElementById('projectText').textContent = description;
-    document.getElementById('githubLink').setAttribute('href', githubLink);
-    let currentIndex = 0;
-
-    // Função para atualizar a imagem no carrossel
-    const updateImage = () => {
-      document.getElementById('carouselImage').src = images[currentIndex];
-    };
-
-    // Atualizando a imagem inicial
-    updateImage();
-
-    // Funções do carrossel
-    document.getElementById('prevBtn').addEventListener('click', () => {
-      currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
-      updateImage();
-    });
-
-    document.getElementById('nextBtn').addEventListener('click', () => {
-      currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
-      updateImage();
-    });
-
-    // Mostra o modal
-    document.getElementById('projectModal').style.display = 'block';
+    openModal(title, description, githubLink, imageList);
   });
 });
-
-// Fechar modal
-document.querySelector('.close-btn').addEventListener('click', () => {
-  document.getElementById('projectModal').style.display = 'none';
-});
-
-// Fechar modal se clicar fora da área do conteúdo
-window.addEventListener('click', (event) => {
-  if (event.target === document.getElementById('projectModal')) {
-    document.getElementById('projectModal').style.display = 'none';
-  }
-});
+ */
 
