@@ -1471,6 +1471,7 @@ main {
 .project-title,
 .project-category {
   margin-left: 10px;
+
 }
 
 .project-title {
@@ -1482,9 +1483,9 @@ main {
 }
 
 .project-category {
-  color: var(--white-2);
   font-size: var(--fs-6);
-  font-weight: var(--fw-300);
+  color: var(--c3);
+  font-weight: var(--fw-500);
 }
 
 /* .modal {
