@@ -804,10 +804,11 @@ main {
   font-size: var(--fs-7);
 }
 
-#contact-link-whatsapp {
+#contact-link-underline {
   color: var(--c3);
+  font-size: 12px;
   font-weight: 400;
-  font-style: oblique;
+
   text-decoration: underline;
 }
 
@@ -1263,9 +1264,9 @@ main {
 }
 
 .certificados-org {
-  color: var(--white-2);
+  color: var(--c3);
   font-size: var(--fs-6);
-  font-weight: var(--fw-300);
+  font-weight: var(--fw-600);
 }
 
 /*=================================Resume - Skills=====================================*/
