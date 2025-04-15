@@ -477,6 +477,7 @@ textarea {
 }
 
 html {
+  color: var(--c3);
   font-family: var(--ff-poppins);
 }
 

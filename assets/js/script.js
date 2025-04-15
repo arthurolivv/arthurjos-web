@@ -117,7 +117,7 @@ navigationLinks.forEach(link => {
   });
 });
 
-/*
+
 // //  modals
 // Seleciona todos os botões que abrem modais
 document.querySelectorAll("[data-open-modal]").forEach(button => {
@@ -169,6 +169,7 @@ document.querySelector(".contact-seemore-out").addEventListener("click", functio
   document.querySelector("main").scrollIntoView({ behavior: "smooth" });
 });
 
+/*
 //modal portfolio
 const modal = document.getElementById('projectModal');
 const modalImage = document.getElementById('carouselImage');
@@ -230,6 +231,5 @@ document.querySelectorAll('.project-item').forEach(item => {
 
     openModal(title, description, githubLink, imageList);
   });
-});
- */
+});*/
 
