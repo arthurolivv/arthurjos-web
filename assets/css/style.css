@@ -164,7 +164,7 @@ header.home .finisher-header {
 }
 
 .name-position {
-  width: 209px;
+  width: 230px;
   height: 140px;
   position: relative;
   display: flex;
@@ -478,9 +478,36 @@ html {
   font-family: var(--ff-poppins);
 }
 
+
 body {
   background: var(--smoky-black);
 }
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  position: relative;
+  font-family: sans-serif;
+}
+
+/* Garante que o canvas cubra toda a página */
+#finisher-canvas {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: -1 !important;
+  /* Fica no fundo */
+  pointer-events: none;
+  /* Não atrapalha cliques */
+}
+
+
 
 /*=================================Reutilizaveis=====================================*/
 
@@ -1548,7 +1575,7 @@ main {
 
 .blog-post-item>a {
   position: relative;
-  background: var(--line-default);
+  background: var(--c3);
   height: 100%;
   box-shadow: var(--shadow-4);
   border-radius: 16px;
@@ -1745,6 +1772,7 @@ textarea.form-input::-webkit-resizer {
   background: var(--bg-gradient-jet);
 } */
 
+
 /*=================================RESPONSIVIDADE - Menor que 580px=====================================*/
 
 @media (max-width: 580px) {
@@ -1774,6 +1802,8 @@ textarea.form-input::-webkit-resizer {
 
   .contact-seemore-in {
     display: inline-flex;
+    padding-bottom: 15%;
+
   }
 
   .contact-seemore-out {
@@ -1801,6 +1831,15 @@ textarea.form-input::-webkit-resizer {
 
 }
 
+/*=================================RESPONSIVIDADE - Menor que 450px=====================================*/
+
+@media (max-width: 400px) {
+  .contact-seemore-in {
+    padding-bottom: 0%;
+  }
+
+}
+
 /*=================================RESPONSIVIDADE - Maior que 450px=====================================*/
 
 @media (min-width: 450px) {
@@ -1812,8 +1851,6 @@ textarea.form-input::-webkit-resizer {
   .clients-item {
     min-width: calc(33.33% - 10px);
   }
-
-
 
   /**
      * #PORTFOLIO, BLOG 
@@ -1859,6 +1896,7 @@ textarea.form-input::-webkit-resizer {
     padding: 30px;
   }
 
+
   .article-title {
     font-weight: var(--fw-600);
     padding-bottom: 15px;
@@ -1874,6 +1912,10 @@ textarea.form-input::-webkit-resizer {
     height: 48px;
     border-radius: 12px;
     font-size: 18px;
+  }
+
+  .contact-seemore-out {
+    padding-bottom: 8%;
   }
 
   /*=================================RESPONSIVIDADE - maior que 580px - Main=====================================*/
@@ -2251,7 +2293,9 @@ textarea.form-input::-webkit-resizer {
 
   /*=================================RESPONSIVIDADE - maior que 1024px - home=====================================*/
 
-
+  .contact-seemore-out {
+    padding-bottom: 0%;
+  }
 
   /*=================================RESPONSIVIDADE - maior que 1024px - Reutilizaveis=====================================*/
 
