@@ -136,7 +136,7 @@ document.querySelectorAll("[data-close-modal]").forEach(button => {
 });
 
 
-//success email
+/*
 document.getElementById("contact-form").addEventListener("submit", function (e) {
   e.preventDefault(); // Impede o envio padrão do formulário
 
@@ -159,7 +159,7 @@ document.getElementById("contact-form").addEventListener("submit", function (e) 
       console.error("Erro:", error);
       alert("Erro ao enviar o formulário.");
     });
-});
+});*/
 
 //ver mais button
 document.querySelector(".contact-seemore-in").addEventListener("click", function () {
