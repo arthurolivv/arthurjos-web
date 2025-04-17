@@ -1796,6 +1796,7 @@ textarea.form-input::-webkit-resizer {
   .info-container {
     width: auto;
     height: auto;
+    margin-top: -20%;
   }
 
   .name-position {
@@ -1812,7 +1813,7 @@ textarea.form-input::-webkit-resizer {
 
   .contact-seemore-in {
     display: inline-flex;
-    padding-bottom: 0%;
+    padding-bottom: 65%;
 
   }
 
