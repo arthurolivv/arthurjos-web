@@ -1852,9 +1852,7 @@ textarea.form-input::-webkit-resizer {
 
 
   .project-img,
-  .blog-banner-box {
-    height: auto;
-  }
+  .blog-banner-box {}
 
 }
 
